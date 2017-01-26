@@ -25,8 +25,8 @@ function activateScreenTable() {
 function initialAnimation() {
     var storyAnime = new TimelineMax();
     storyAnime
-        .to(hall, 7, { // change while deployment
-            scale: 1.6,
+        .to(hall, 5, { // change while deployment
+            scale: 1.75,
             ease: SlowMo.ease.config(0.2, 0.2, false),
             delay: 2,
             transformOrigin: '50% 50%'
@@ -53,8 +53,8 @@ function initialAnimation() {
         }, 0.3);
 }
 
-function setRoomLight(elem, brightness) {
-    TweenLite.to(elem, 1, { css: { 'filter': 'brightness(' + brightness + ')' }, delay: 14.5 });
+function setRoomLight(elem, brightness, delay) {
+    TweenLite.to(elem, 1, { css: { 'filter': 'brightness(' + brightness + ')' }, delay: delay });
 }
 
 function textToSpan(ele) {
