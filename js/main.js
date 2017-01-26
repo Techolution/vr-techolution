@@ -8,7 +8,7 @@ window.onresize = setScreen;
 
 function initScene() {
     setScreen();
-    TweenLite.set($('#projector, #screenTable, #presentationMenu li'), { opacity: 0 });
+    TweenLite.set($('#projector, #presentationMenu li'), { opacity: 0 });
     TweenLite.to('body', 0.3, { opacity: 1 });
     textToSpan(document.getElementById('hydMsg'));
 }
@@ -30,11 +30,6 @@ function initialAnimation() {
             ease: SlowMo.ease.config(0.2, 0.2, false),
             delay: 2,
             transformOrigin: '50% 50%'
-        })
-        .to('#screenTable', 0.5, {
-            opacity: 1,
-            delay: 1,
-            ease: Power1.easeIn
         })
         .staggerFromTo($('#presentationMenu li'), 0.7, {
             scale: 0,
