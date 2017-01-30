@@ -48,10 +48,12 @@ body {
 
 #office {
     position: absolute;
-    top: 0;
+    top: 50%;
+    transform:translateY(-50%);
     left: 0;
     right: 0;
     bottom: 0;
+    height:100vh;
 }
 
 #office > img {
@@ -67,7 +69,7 @@ body {
 }
 
 #city {
-    height: 100%;
+    height: 100vh;
     z-index: 100;
     opacity: 1;
     position: absolute;
@@ -104,17 +106,33 @@ body {
 #brandingWrapper {
     position: absolute;
     z-index: 650;
-    border: 3px solid #393f49;
-    top: -3px;
-    left: -.3vw;
-    padding: 20px 10px;
-    width: 34.6vw;
-    background: linear-gradient(to bottom, #e6eef7 0%, #b2becc 100%);
+    top: 5px;
+    left: .3vw;
+    height:40px;
+    width: 33.3vw;
+}
+
+#blur-bg{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:rgba(255,255,255,.7);
+    filter:blur(1px);
 }
 
 #brandingWrapper > * {
     display: inline-block;
     float: left;
+}
+
+#logo{
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform:translateY(-50%);
+    z-index: 1;
 }
 
 #brandingWrapper > #logo img {
@@ -131,8 +149,14 @@ body {
 }
 
 #companymsg {
-    color: #00929F;
-    letter-spacing: -0.3px;
+color: #00929F;
+letter-spacing: -0.3px;
+position:absolute;
+z-index:1;
+right:10px;
+font-size: 2%;
+top:50%;
+transform:translateY(-50%);
 }
 
 .colon {
@@ -203,13 +227,15 @@ div#projector {
 }
 
 .trapezoid {
-    background-image: linear-gradient(90deg, rgba(100, 119, 100, 0.9) 0px, rgba(100, 119, 100, 0.9) 1%, rgba(0, 0, 0, 1) 100%);
+    //background-image: linear-gradient(90deg, rgba(100, 119, 100, 0.9) 0px, rgba(100, 119, 100, 0.9) 1%, rgba(0, 0, 0, 1) 100%);
+    background-image: url(../img/table.png);
+    background-size: 100%;
     height: 48.3px;
     left: 43.3vw;
     position: absolute;
     width: 13.34vw;
     z-index: 9930;
-    opacity: 1;
+    opacity: 0;
 }
 
 #presentationMenu {
@@ -224,7 +250,7 @@ div#projector {
 }
 
 #presentationMenu li {
-    background-color: rgba(0, 0, 0, 0.3);
+    //background-color: rgba(0, 0, 0, 0.3);
     color: #fff;
     display: table-cell;
     font-size: 30px;
@@ -241,6 +267,21 @@ div#projector {
     text-decoration: none;
     outline: none;
     line-height: 46px;
+}
+#presentationMenu li a img{
+    width:1.3vw;
+    padding-top:1vh;
+    display:block;
+    margin:auto;
+
+}
+#presentationMenu li a span{
+    display:block;
+    height:11px;
+    font-size:10px;
+    line-height:10px;
+    text-align:center;
+    -webkit-backface-visibility:hidden;
 }
 
 #presentationMenu li a:hover,

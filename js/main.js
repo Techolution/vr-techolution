@@ -1,16 +1,17 @@
 window.onload = function() {
-    initScene();
-    initialAnimation();
+    var coOrdinates = initScene();
+    initialAnimation(coOrdinates);
     activateScreenTable();
 };
 
 window.onresize = setScreen;
 
 function initScene() {
-    setScreen();
+    var init = setScreen();
     TweenLite.set($('#projector, #presentationMenu li'), { opacity: 0 });
     TweenLite.to('body', 0.3, { opacity: 1 });
     textToSpan(document.getElementById('hydMsg'));
+    return init;
 }
 
 function activateScreenTable() {
@@ -22,14 +23,28 @@ function activateScreenTable() {
     });
 }
 
-function initialAnimation() {
+function initialAnimation(point) {
     var storyAnime = new TimelineMax();
     storyAnime
-        .to(hall, 5, { // change while deployment
-            scale: 1.75,
+        .to(hall, 2, { // change while deployment
+            scale: 1.8,//1.75,
             ease: SlowMo.ease.config(0.2, 0.2, false),
             delay: 2,
             transformOrigin: '50% 50%'
+        })
+        .fromTo($('.trapezoid'), 1.3, {
+            scale: 0,
+            opacity:0,
+            borderRadius: 100
+        }, {
+            opacity: .3,
+            scale: 1,
+            borderRadius: 0,
+            ease: Power2.easeInOut
+        })
+        .to($('.trapezoid'), .5, {
+            opacity: 1,
+            ease: Power2.easeInOut
         })
         .staggerFromTo($('#presentationMenu li'), 0.7, {
             scale: 0,
@@ -85,6 +100,12 @@ function setScreen() {
         perspectiveOriginX: perspectiveOriginX,
         perspectiveOriginY: perspectiveOriginY
     });
+    $('#office').css({height: $('#officeroom').height()});
     TweenLite.set('#hall', { scale: currentScale });
     TweenLite.set('#screenTable', { rotationX: 90 });
+
+    return {
+        x : perspectiveOriginX,
+        y : perspectiveOriginY
+    }
 }
