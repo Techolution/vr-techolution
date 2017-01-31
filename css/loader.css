@@ -6,6 +6,7 @@
     position: relative;
     width: 100vw;
     z-index: 100;
+    display: none;
 }
 
 .elevator, .elevator:before, .elevator:after, .elevator *:before, .elevator *:after {
