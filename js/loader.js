@@ -3,11 +3,10 @@
   function loadbar() {
     var ovrl = id("loaderElevator"),
         stat = id("currentFloor"),
-
         img = document.images,
-        console.log(img);
         c = 0;
         tot = img.length;
+        console.log(img);
 
     function imgLoaded(){
       c += 1;
