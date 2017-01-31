@@ -1,7 +1,7 @@
 window.onload = function() {
     var coOrdinates = initScene();
     initialAnimation(coOrdinates);
-    activateScreenTable();
+    //activateScreenTable();
 };
 
 window.onresize = setScreen;
