@@ -5,6 +5,7 @@
         stat = id("currentFloor"),
 
         img = document.images,
+        console.log(img);
         c = 0;
         tot = img.length;
 
