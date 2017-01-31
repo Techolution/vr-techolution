@@ -6,15 +6,26 @@
     position: relative;
     width: 100vw;
     z-index: 100;
-    /*display: none;*/
-}
+    font-family: 'VT323', monospace;
+    /*animation-name: walkinElevator;
+    animation-duration: 3s;*/
 
+}
+/*@keyframes walkinElevator {
+  0%{
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  100%{
+    opacity: 1;
+    transform: scale(1);
+  }
+}*/
 .elevator, .elevator:before, .elevator:after, .elevator *:before, .elevator *:after {
     box-sizing: border-box;
 }
 
 .metal {
-    text-shadow: hsla(0, 0%, 40%, .5) 0 -1px 0, hsla(0, 0%, 100%, .6) 0 2px 1px;
     background-color: hsl(0, 0%, 90%);
     box-shadow: 0px 0px 300px 10px black inset;
     /* outer HL */
@@ -161,13 +172,14 @@
     height: 100%;
     width: calc(100% - 150px);
     position: relative;
+    overflow: hidden;
 }
 
 .panel-box {
     box-shadow: 1px 2px 14px -7px #000 inset;
     margin-left: 21px;
     margin-top: 60px;
-    max-width: 90px;
+    max-width: 107px;
     padding: 10px;
     float: left;
 }
@@ -182,7 +194,7 @@
     line-height: 16px;
 }
 
-.panel-screen:before, .floors-list:before {
+.panel-screen:before, .techo-box:before {
     content: "";
     position: absolute;
     width: 100%;
@@ -230,29 +242,32 @@
     position: relative;
 }
 
-.door-inner:before {
+.door-inner.left:before {
     background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0;
     box-shadow: 3px 0 5px 0 black;
     content: "";
     height: 100%;
-    left: 48%;
+    left: 100%;
     position: absolute;
     width: 5px;
+    z-index: 1
 }
 
 .door-inner {
-    box-shadow: 1px 1px 51px -5px black inset;
+    box-shadow: 1px 1px 76px 5px black inset;
     float: left;
     height: 100%;
     position: relative;
-    width: 100%;
+    width: 50%;
 }
-
-.techo-box img {
-    display: block;
-    height: auto;
-    margin: 0 auto;
-    width: 150px;
+.techo-box {
+	color: #fff;
+	font-size: 10px;
+	letter-spacing: 1px;
+	text-align: center;
+	font-family: 'Varela Round', sans-serif, Helvetica;
+  padding: 3px;
+  position: relative;
 }
 
 .blinker-arrow {
