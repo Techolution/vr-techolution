@@ -5,7 +5,7 @@
     overflow: hidden;
     position: relative;
     width: 100vw;
-    z-index: 10;
+    z-index: 100;
 }
 
 .elevator, .elevator:before, .elevator:after, .elevator *:before, .elevator *:after {
