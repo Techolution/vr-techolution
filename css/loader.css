@@ -1,0 +1,424 @@
+/* loader elevator starts */
+
+.elevator {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    width: 100vw;
+    z-index: 10;
+}
+
+.elevator, .elevator:before, .elevator:after, .elevator *:before, .elevator *:after {
+    box-sizing: border-box;
+}
+
+.metal {
+    text-shadow: hsla(0, 0%, 40%, .5) 0 -1px 0, hsla(0, 0%, 100%, .6) 0 2px 1px;
+    background-color: hsl(0, 0%, 90%);
+    box-shadow: 0px 0px 300px 10px black inset;
+    /* outer HL */
+    -webkit-transition: color .2s;
+    transition: color .2s;
+    background-image: -webkit-repeating-linear-gradient(left, hsla(0, 0%, 100%, 0) 0%, hsla(0, 0%, 100%, 0) 6%, hsla(0, 0%, 100%, .1) 7.5%), -webkit-repeating-linear-gradient(left, hsla(0, 0%, 0%, 0) 0%, hsla(0, 0%, 0%, 0) 4%, hsla(0, 0%, 0%, .03) 4.5%), -webkit-repeating-linear-gradient(left, hsla(0, 0%, 100%, 0) 0%, hsla(0, 0%, 100%, 0) 1.2%, hsla(0, 0%, 100%, .15) 2.2%), -webkit-linear-gradient(top, hsl(0, 0%, 78%) 0%, hsl(0, 0%, 90%) 47%, hsl(0, 0%, 78%) 53%, hsl(0, 0%, 70%)100%);
+    background-image: -webkit-repeating-linear-gradient(left, hsla(0, 0%, 100%, 0) 0%, hsla(0, 0%, 100%, 0) 6%, hsla(0, 0%, 100%, .1) 7.5%), -webkit-repeating-linear-gradient(left, hsla(0, 0%, 0%, 0) 0%, hsla(0, 0%, 0%, 0) 4%, hsla(0, 0%, 0%, .03) 4.5%), -webkit-repeating-linear-gradient(left, hsla(0, 0%, 100%, 0) 0%, hsla(0, 0%, 100%, 0) 1.2%, hsla(0, 0%, 100%, .15) 2.2%), linear-gradient(180deg, hsl(0, 0%, 78%) 0%, hsl(0, 0%, 90%) 47%, hsl(0, 0%, 78%) 53%, hsl(0, 0%, 70%)100%);
+}
+
+.metal-upper {
+    background: rgb(61, 61, 61);
+    background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.05) 25%, transparent 25%, transparent 50%);
+    background-image: -webkit-repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.05) 25%, transparent 25%, transparent 50%);
+    background-image: -moz-repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.05) 25%, transparent 25%, transparent 50%);
+    background-image: -ms-repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.05) 25%, transparent 25%, transparent 50%);
+    background-image: -o-repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.05) 25%, transparent 25%, transparent 50%);
+    /*background-size*/
+    -webkit-background-size: 5px 5px;
+    -moz-background-size: 5px 5px;
+    -o-background-size: 5px 5px;
+    background-size: 5px 5px;
+}
+
+.rightwall {
+    right: 0;
+    transform: perspective(35vw) rotateY(-55deg) translateZ(-10vw);
+    -ms-transform: perspective(35vw) rotateY(-55deg) translateZ(-10vw);
+    -o-transform: perspective(35vw) rotateY(-55deg) translateZ(-10vw);
+    -moz-transform: perspective(35vw) rotateY(-55deg) translateZ(-10vw);
+    -webkit-transform: perspective(35vw) rotateY(-55deg) translateZ(-10vw);
+}
+
+.rightwall, .leftwall {
+    height: 100vh;
+    position: absolute;
+    width: 55vw;
+}
+
+.leftwall {
+    left: 0;
+    transform: perspective(35vw) rotateY(55deg) translateZ(-10vw);
+    -ms-transform: perspective(35vw) rotateY(55deg) translateZ(-10vw);
+    -o-transform: perspective(35vw) rotateY(55deg) translateZ(-10vw);
+    -moz-transform: perspective(35vw) rotateY(55deg) translateZ(-10vw);
+    -webkit-transform: perspective(35vw) rotateY(55deg) translateZ(-10vw);
+}
+
+.topwall {
+    position: absolute;
+    width: 100vw;
+    z-index: -10;
+}
+
+.bottomwall {
+    background-color: #6d695c;
+    background-image: repeating-linear-gradient(120deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .1) 1px, transparent 1px, transparent 60px), repeating-linear-gradient(60deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .1) 1px, transparent 1px, transparent 60px), linear-gradient(60deg, rgba(0, 0, 0, .1) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, .1) 75%, rgba(0, 0, 0, .1)), linear-gradient(120deg, rgba(0, 0, 0, .1) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, .1) 75%, rgba(0, 0, 0, .1));
+    background-size: 70px 120px;
+    box-shadow: /*38px 17px 100vh 27px black inset*/
+    40px 20px 85px -1px black inset;
+    position: absolute;
+    width: 100vw;
+    z-index: -1;
+    bottom: 0;
+}
+
+.topwall, .bottomwall {
+    height: 24.05vh;
+}
+
+.centerwall {
+    height: 56vh;
+    margin-left: 50%;
+    position: absolute;
+    top: 22vh;
+    transform: translate(-50%, 0px);
+    width: 37vw;
+    z-index: 10;
+}
+
+.panel-container {
+    float: left;
+    width: 100%;
+}
+
+.topwall .lightbox {
+    float: left;
+    height: 100%;
+    position: relative;
+    width: 50%;
+}
+
+.light-item {
+    background-color: rgb(250, 250, 214);
+    border-radius: 50%;
+    transform: rotateX(55deg);
+    position: absolute;
+}
+
+.lightbox-inner .light-item:first-child {
+    box-shadow: 1px 1px 50px 50px rgb(250, 250, 214);
+    height: 30px;
+    top: 20px;
+    width: 30px;
+}
+
+.lightbox-inner .light-item:last-child {
+    box-shadow: 1px 1px 30px 30px rgb(250, 250, 214);
+    height: 15px;
+    top: 120px;
+    width: 15px;
+}
+
+.left .light-item:first-child {
+    right: 30%;
+}
+
+.left .light-item:last-child {
+    right: 20%;
+}
+
+.right .light-item:first-child {
+    left: 30%;
+}
+
+.right .light-item:last-child {
+    left: 20%;
+}
+
+.centerwall-inner .button-panel {
+    float: left;
+    height: 100%;
+    width: 150px;
+}
+
+.centerwall-inner {
+    float: left;
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.centerwall .door-panel {
+    float: left;
+    height: 100%;
+    width: calc(100% - 150px);
+    position: relative;
+}
+
+.panel-box {
+    box-shadow: 1px 2px 14px -7px #000 inset;
+    margin-left: 21px;
+    margin-top: 60px;
+    max-width: 90px;
+    padding: 10px;
+    float: left;
+}
+
+.panel-screen {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.techomsg {
+    font-size: 16px;
+    line-height: 16px;
+}
+
+.panel-screen:before, .floors-list:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255, 255, 255, .01)), to(rgba(0, 0, 0, .05))), -webkit-gradient(linear, left top, right bottom, color-stop(0, rgba(0, 0, 0, 0)), color-stop(0.5, rgba(0, 0, 0, .1)), color-stop(0.501, rgba(0, 0, 0, 0)), color-stop(1, rgba(0, 0, 0, 0)));
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, .15), rgba(0, 0, 0, .25)), -moz-linear-gradient(left top, rgba(0, 0, 0, 0), rgba(0, 0, 0, .1) 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0));
+    background: linear-gradient(top, rgba(0, 0, 0, .15), rgba(0, 0, 0, .25)), linear-gradient(left top, rgba(0, 0, 0, 0), rgba(0, 0, 0, .1) 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0));
+}
+
+.panel-screen {
+    color: #e0e1e2;
+    font-size: 30px;
+    line-height: 30px;
+    margin-bottom: 15px;
+    position: relative;
+    text-align: center;
+}
+
+.floors-list .button {
+    border: 1px dotted #e0e1e2;
+    box-sizing: border-box;
+    color: #e0e1e2;
+    display: inline-block;
+    float: left;
+    font-size: 19px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    text-align: center;
+    width: 33.333%;
+}
+
+.floors-list .button:last-child {
+    width: 100%;
+}
+
+.door-panel {
+    transition: all .5s ease 0s;
+}
+
+.floors-list {
+    float: left;
+    width: 100%;
+    position: relative;
+}
+
+.door-inner:before {
+    background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0;
+    box-shadow: 3px 0 5px 0 black;
+    content: "";
+    height: 100%;
+    left: 48%;
+    position: absolute;
+    width: 5px;
+}
+
+.door-inner {
+    box-shadow: 1px 1px 51px -5px black inset;
+    float: left;
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.techo-box img {
+    display: block;
+    height: auto;
+    margin: 0 auto;
+    width: 150px;
+}
+
+.blinker-arrow {
+    position: absolute;
+    right: 15px;
+    line-height: 0;
+    animation-name: blinking;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    opacity: 1;
+    /*top: 17px;*/
+    top: 106%;
+}
+
+@keyframes blinking {
+    0% {
+        opacity: 1;
+        top: 105%;
+    }
+    100% {
+        opacity: 0;
+        top: -6px;
+    }
+}
+
+@keyframes Lblinking {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.curr-flr {
+    position: relative;
+    overflow: hidden;
+}
+
+@media all and (max-width: 1050px) {
+    .centerwall-inner .button-panel {
+        width: 100px;
+    }
+    .panel-box {
+        margin-top: 60px;
+        max-width: 60px;
+        margin-left: 11px;
+    }
+    .metal {
+        box-shadow: 0px 0px 100px 10px black inset;
+    }
+    .centerwall .door-panel {
+        width: calc(100% - 100px);
+    }
+    .rightwall {
+        right: 0;
+        transform: perspective(35vw) rotateY(-75deg) translateZ(-20vw);
+        -ms-transform: perspective(35vw) rotateY(-75deg) translateZ(-20vw);
+        -o-transform: perspective(35vw) rotateY(-75deg) translateZ(-20vw);
+        -moz-transform: perspective(35vw) rotateY(-75deg) translateZ(-20vw);
+        -webkit-transform: perspective(35vw) rotateY(-75deg) translateZ(-20vw);
+    }
+    .leftwall {
+        left: 0;
+        transform: perspective(35vw) rotateY(75deg) translateZ(-20vw);
+        -ms-transform: perspective(35vw) rotateY(75deg) translateZ(-20vw);
+        -o-transform: perspective(35vw) rotateY(75deg) translateZ(-20vw);
+        -moz-transform: perspective(35vw) rotateY(75deg) translateZ(-20vw);
+        -webkit-transform: perspective(35vw) rotateY(75deg) translateZ(-20vw);
+    }
+    .centerwall {
+        height: 52vh;
+        top: 24vh;
+        width: 58vw;
+    }
+}
+
+@media all and (max-width: 550px) {
+    .floors-list .button {
+        font-size: 13px;
+        padding: 2px 0;
+        width: 50% !important;
+    }
+    .panel-box {
+        padding: 7px;
+        max-width: 60px;
+        margin-left: 8px;
+    }
+    .centerwall-inner .button-panel {
+        width: 88px;
+    }
+    .centerwall .door-panel {
+        width: calc(100% - 88px);
+    }
+    .panel-screen {
+        font-size: 20px;
+        line-height: 20px;
+    }
+}
+
+@media all and (max-width: 440px) {
+    .centerwall-inner .button-panel {
+        width: 58px;
+    }
+    .panel-box {
+        padding: 7px;
+        max-width: 30px;
+        margin-left: 8px;
+    }
+    .centerwall .door-panel {
+        width: calc(100% - 58px);
+    }
+}
+
+@media all and (max-height: 600px) {
+    .centerwall {
+        height: 76vh;
+        top: 12vh;
+        width: 65vw;
+    }
+    .leftwall {
+        left: 0;
+        transform: perspective(100vw) rotateY(75deg) translateZ(-20vw);
+        -ms-transform: perspective(100vw) rotateY(75deg) translateZ(-20vw);
+        -o-transform: perspective(100vw) rotateY(75deg) translateZ(-20vw);
+        -moz-transform: perspective(100vw) rotateY(75deg) translateZ(-20vw);
+        -webkit-transform: perspective(100vw) rotateY(75deg) translateZ(-20vw);
+    }
+    .rightwall {
+        right: 0;
+        transform: perspective(100vw) rotateY(-75deg) translateZ(-20vw);
+        -ms-transform: perspective(100vw) rotateY(-75deg) translateZ(-20vw);
+        -o-transform: perspective(100vw) rotateY(-75deg) translateZ(-20vw);
+        -moz-transform: perspective(100vw) rotateY(-75deg) translateZ(-20vw);
+        -webkit-transform: perspective(100vw) rotateY(-75deg) translateZ(-20vw);
+    }
+    .topwall, .bottomwall {
+        height: 13vh;
+    }
+}
+
+@media all and (min-height: 1000px) {
+    .rightwall {
+        right: 0;
+        transform: perspective(17vw) rotateY(-75deg) translateZ(-20vw);
+        -ms-transform: perspective(17vw) rotateY(-75deg) translateZ(-20vw);
+        -o-transform: perspective(17vw) rotateY(-75deg) translateZ(-20vw);
+        -moz-transform: perspective(17vw) rotateY(-75deg) translateZ(-20vw);
+        -webkit-transform: perspective(17vw) rotateY(-75deg) translateZ(-20vw);
+    }
+    .leftwall {
+        right: 0;
+        transform: perspective(17vw) rotateY(75deg) translateZ(-20vw);
+        -ms-transform: perspective(17vw) rotateY(75deg) translateZ(-20vw);
+        -o-transform: perspective(17vw) rotateY(75deg) translateZ(-20vw);
+        -moz-transform: perspective(17vw) rotateY(75deg) translateZ(-20vw);
+        -webkit-transform: perspective(17vw) rotateY(75deg) translateZ(-20vw);
+    }
+    .centerwall {
+        height: 36vh;
+        top: 32vh;
+        width: 54vw;
+    }
+    .topwall, .bottomwall {
+        height: 32.05vh;
+    }
+}
+
+
+/* loader elevator ends */
