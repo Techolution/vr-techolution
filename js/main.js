@@ -9,7 +9,7 @@ window.onresize = setScreen;
 function initScene() {
     var init = setScreen();
     TweenLite.set($('#projector, #presentationMenu li'), { opacity: 0 });
-    TweenLite.to('body', 0.3, { opacity: 1 });
+    //TweenLite.to('body', 0.3, { opacity: 1 });
     textToSpan(document.getElementById('hydMsg'));
     textToSpan(document.getElementById('seatedMsg'));
     textToSpan(document.getElementById('turnOnMsg'));
