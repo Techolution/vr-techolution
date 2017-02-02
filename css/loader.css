@@ -193,7 +193,11 @@
     font-size: 16px;
     line-height: 16px;
 }
-
+.techo-box .msg {
+    position: relative;
+    top: auto;
+    visibility: visible;
+}
 .panel-screen:before, .techo-box:before {
     content: "";
     position: absolute;
