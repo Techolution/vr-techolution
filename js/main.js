@@ -78,7 +78,7 @@ function initialAnimation(point) {
         .to(hall, 2, { // change while deployment
             scale: scale * 0.8,
             ease: SlowMo.ease.config(0.2, 0.2, false),
-            delay: 0.3,
+            delay: 6.3,
             transformOrigin: '50% 50%'
         })
         .to(hall, 1, { // change while deployment
@@ -142,7 +142,7 @@ function initialAnimation(point) {
     showTextTyping($('#turnOffMsg'), scale, 12, 0.6, true);//it was quick! turn off now
     showTextTyping($('#visionMsg'), scale, 16, 0.6, false);
         /*
-        
+
 */
 }
 
