@@ -1,0 +1,79 @@
+.contactUsData > div {
+    opacity: 0;
+    visibility: hidden;
+    float: left;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 46px;
+    bottom: 0;
+}
+.contactUsData > div.active {
+    opacity: 1;
+    visibility: visible;
+}
+.location-data-wrapper {
+    padding: 0 10px 15px;
+    max-width: 330px;
+    margin: 0 auto;
+    float: left;
+    position: relative;
+    transform: translate(-50%,20px);
+    left: 50%;
+    background: rgba(255,255,255,.3);
+    border-radius: 5px;
+    width: 100%;
+}
+.location-data-wrapper h2 {
+    margin: 10px 0;
+    font-size: 16px;
+    text-align: center;
+}
+.location-info-container{float: left;width: 100%;position: relative;}
+.location-left-box{float: left;position: relative;width: 70%;}
+.loc-img{float: left;width: 70px;margin-right: 10px;}
+.loc-data{font-size: 8px;float: left;}
+.loc-data a {
+    color: rgb(0,127,142);
+    text-decoration: none;
+}
+.loc-data ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.loc-data ul li {
+    margin-bottom: 5px;
+    padding-left: 15px;
+}
+.glocation{
+}
+.mail{
+}
+.phone{
+}
+.location-right-box{float: left;width: 30%;position: relative;}
+.follow-box{font-size: 8px;margin-top: 38px;}
+.follow-links{margin: 0;padding: 0;list-style: none;display: block;}
+.twitter{
+}
+.linkedin{
+}
+.youtube{
+}
+.loc-img img {
+    display: block;
+    margin: 0 auto;
+    height: auto;
+    width: 100%;
+    box-shadow: -1px 2px 8px 0px rgba(0,0,0,.3);
+}
+.follow-box p {
+    padding: 0;
+    margin: 0;
+}
+.follow-links li {
+    display: inline-block;
+    margin-right: 10px;
+}
