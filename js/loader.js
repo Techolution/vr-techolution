@@ -25,7 +25,7 @@
       }, 500);
       setTimeout(function(){
         ovrl.style.display = "none";
-      },5500);
+      },4200);
     }
     for(var i=0; i<tot; i++) {
       var tImg     = new Image();

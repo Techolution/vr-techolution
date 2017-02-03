@@ -27,13 +27,13 @@ function activateScreenTable() {
     });
 }
 
-function showTextTyping(ele, scale, initialDelay, timeScale, yoyo) {
+function showTextTyping(ele, scale, initialDelay, timeScale, yoyo, revealInterval) {
     var $cursor = $(".text-caret"),
-        revealInterval = 0.05,
+        revealInterval = revealInterval,
         $chars = ele.find(".l"),
         tl = new TimelineMax({
             delay: initialDelay,
-            repeat: yoyo?1:0,
+            repeat: yoyo ? 1 : 0,
             yoyo: yoyo,
             repeatDelay: 1,
             onRepeat: function() {
@@ -49,8 +49,8 @@ function showTextTyping(ele, scale, initialDelay, timeScale, yoyo) {
     $chars.each(function(index, element) {
         var $element = $(element);
         var offset = $element.position();
-        var width = $element.width()/scale;
-        tl.set($cursor, { left: offset.left + width + 2}, (index + 1) * revealInterval);
+        var width = $element.width() / scale;
+        tl.set($cursor, { left: offset.left + width + 2 }, (index + 1) * revealInterval);
         tl.set($element, { autoAlpha: 1 }, (index + 1) * revealInterval);
     });
 
@@ -66,37 +66,39 @@ function showTextTyping(ele, scale, initialDelay, timeScale, yoyo) {
     blink();
 }
 
-function getScale(){
-    return 1.8;
+function getScale() {
+    var seatingPoint = 500 * $('#officeroom').height() / 1080;
+    //seatingPoint * scale = window.innerHeight
+    var scale = window.innerHeight / seatingPoint;
+    return Math.max(scale, 1);
 }
 
 function initialAnimation(point) {
     var scale = getScale();
     var storyAnime = new TimelineMax();
-    var welcome = new TimelineMax({ delay: 0 });
+    var welcome = new TimelineMax({ delay: 100 });
     storyAnime
-        .to(hall, 2, { // change while deployment
+        .to(hall, 1, { // change while deployment
             scale: scale * 0.8,
-            ease: SlowMo.ease.config(0.2, 0.2, false),
-            delay: 6.3,
+            delay: 5,
             transformOrigin: '50% 50%'
         })
         .to(hall, 1, { // change while deployment
             scale: scale,
             ease: SlowMo.ease.config(0.2, 0.2, false),
-            delay: 5,
+            delay: 2,
             transformOrigin: '50% 50%'
         })
         .fromTo($('.trapezoid'), 1.3, {
             scale: 0,
-            opacity:0,
+            opacity: 0,
             borderRadius: 100
         }, {
             opacity: 0.3,
             scale: 1,
             borderRadius: 0,
             ease: Power2.easeInOut,
-            delay:6
+            delay: 3
         })
         .to($('.trapezoid'), 0.5, {
             opacity: 1,
@@ -110,17 +112,17 @@ function initialAnimation(point) {
             scale: .3,
             ease: Back.easeInOut
         })
-        .to($('#presentation-logo'), 0.25, {
+        .to($('#presentation-logo'), 0.15, {
             scale: .2,
             ease: Back.easeInOut,
-            onComplete: function(){
+            onComplete: function() {
                 var elem = $('#officeroom, #chair');
-                setRoomLight(elem, 0.6, 3);
+                setRoomLight(elem, 0.6, 1.3);
             }
         })
         .to($('#presentation-logo'), 0.15, {
             scale: 0,
-            delay:11,
+            delay: 7,
             ease: Back.easeInOut
         })
         .staggerFromTo($('#presentationMenu li'), 0.7, {
@@ -130,24 +132,25 @@ function initialAnimation(point) {
             opacity: 1,
             scale: 1,
             borderRadius: 0,
-            ease: Power2.easeInOut,
-            onComplete: function(){
-                TweenLite.to('#projector', 1, { opacity: 1 });
-            }
-        }, 0.3);
-
-    showTextTyping($('#hydMsg'), scale, 0, 0.5, true);
-    showTextTyping($('#seatedMsg'), scale, 4, 0.6, true);
-    showTextTyping($('#turnOnMsg'), scale, 8, 0.6, true);//real turn on :)
-    showTextTyping($('#turnOffMsg'), scale, 12, 0.6, true);//it was quick! turn off now
-    showTextTyping($('#visionMsg'), scale, 16, 0.6, false);
-        /*
+            ease: Power2.easeInOut
+        }, 0.3).
+        to('#projector', 1, { 
+            opacity: 1,
+            delay: 0
+        });
+    //ele, scale, initialDelay, timeScale, yoyo, revealInterval
+    showTextTyping($('#hydMsg'), scale, 1, 0.5, true, 0.01);
+    showTextTyping($('#seatedMsg'), scale, 4, 0.6, true, 0.01);
+    showTextTyping($('#turnOnMsg'), scale, 7, 0.6, true, 0.01); //real turn on :)
+    showTextTyping($('#turnOffMsg'), scale, 9, 0.6, true, 0.01); //it was quick! turn off now
+    showTextTyping($('#visionMsg'), scale, 12, 0.6, false, 0.02);
+    /*
 
 */
 }
 
 function setRoomLight(elem, brightness, delay) {
-    TweenLite.to(elem, 1, { css: { 'filter': 'brightness(' + brightness + ') hue-rotate(10deg) saturate(300%)' }, delay: delay });
+    TweenLite.to(elem, .7, { css: { 'filter': 'brightness(' + brightness + ') hue-rotate(10deg) saturate(300%)' }, delay: delay });
 }
 
 function textToSpan(ele) {
@@ -158,7 +161,7 @@ function setScreen() {
     var top, left, height, width, sideBuffer, perspectiveOriginX, perspectiveOriginY, currentScale;
 
     //save current scale
-    currentScale = $('#hall')[0]._gsTransform ? $('#hall')[0]._gsTransform.scaleX : 1;
+    currentScale = $('#hall')[0]._gsTransform ? getScale() : 1;
 
     //reset scale for calculation
     TweenLite.set('#hall', { scale: 1, perspective: 10000 });

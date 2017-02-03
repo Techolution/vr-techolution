@@ -69,7 +69,7 @@ body {
 }
 
 #city {
-    height: 100vh;
+    height: 100%;
     z-index: 100;
     opacity: 1;
     position: absolute;
@@ -157,27 +157,28 @@ body {
     left: 9vw;
     font-size: 12px;
     top: 50%;
-    height:18px;
-    width:23vw;
+    height: 18px;
+    width: 23vw;
     transform: translateY(-50%);
 }
 
-.msg{
-    position:absolute;
-    top:3px;
+.msg {
+    position: absolute;
+    top: 3px;
     visibility: hidden;
 }
 
-.msg .l{
+.msg .l {
     visibility: hidden;
 }
+
 .text-caret {
     font-size: 16px;
-    display:block;
+    display: block;
     top: 1.5px;
-    position:absolute;
-    left:0;
-    z-index:9999;
+    position: absolute;
+    left: 0;
+    z-index: 9999;
 }
 
 .colon {
@@ -212,13 +213,14 @@ body {
     display: none;
 }
 
-#presentation-logo{
+#presentation-logo {
     visibility: hidden;
-    position:absolute;
-    top:50%;
+    position: absolute;
+    top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%) scale(.2);
 }
+
 div#projector {
     position: absolute;
     top: 0px;
@@ -243,7 +245,7 @@ div#projector {
     background-size: cover;
     height: 100%;
     width: 100%;
-    opacity:.6;
+    opacity: .6;
     overflow: hidden;
 }
 
@@ -361,4 +363,29 @@ div#projector {
 
 body {
     overflow: hidden;
+}
+
+
+/* SVG styles */
+
+.st0 {
+    fill: #FFFFFF;
+}
+
+.st1 {
+    fill: #07939F;
+}
+
+.st2 {
+    fill: none;
+    stroke: #07939F;
+    stroke-miterlimit: 10;
+}
+
+.st3 {
+    fill: #99C546;
+}
+
+.st4 {
+    fill: #0994A0;
 }
