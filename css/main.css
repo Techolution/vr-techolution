@@ -154,12 +154,20 @@ body {
     z-index: 1;
     font-family: Serif;
     font-weight: normal;
-    left: 9vw;
+    left: 9.9vw;
     font-size: 12px;
     top: 50%;
-    height: 18px;
+    height: 16px;
     width: 23vw;
     transform: translateY(-50%);
+}
+
+#logo:after {
+    content: ':';
+    position: absolute;
+    top: 0;
+    left: 8.6vw;
+    font-size: 16px;
 }
 
 .msg {
