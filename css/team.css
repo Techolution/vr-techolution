@@ -1,0 +1,87 @@
+.box_people{
+	width: 130px;
+	height: 57px;
+	border-radius: 4px;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	background-color: #fff;
+	padding-left: 5px;
+	padding-top: 5px;
+	padding-right: 19px;
+	text-align: center;
+}
+.box_people.top{
+	position: absolute;
+    left: 50%;
+    margin-left: -68px;
+    top: 50px;
+}
+.box_people.left{
+	position: absolute;
+    left: 10px;
+    top: 50%;
+    margin-top: -18px;
+}
+.box_people.right{
+	position: absolute;
+	right: 30px;
+	top: 50%;
+	margin-top: -18px;
+}
+.box_people.bottom{
+	position: absolute;
+    left: 50%;
+    margin-left: -68px;
+    bottom: 39px;
+}
+.middle_logo{
+	position: absolute;
+    left: 50%;
+    margin-left: -25px;
+    top: 50%;
+    margin-top: -20px;
+}
+.middle_logo img{
+	width: 50px;
+}
+.name{
+	/* font-size: 7px; */
+	margin: 0px;
+	color: #2d2d2d;
+	font-size: 0.6vw;
+	margin-bottom: 2px;
+}
+.designation{
+	/* font-size: 6px; */
+	margin: 0px;
+	color: #00808f;
+	font-size: 0.4vw;
+	margin-bottom: 2px;
+}
+.supercool{
+	font-size: 0.4vw;
+	margin: 0px;
+	color: #99c546;
+}
+.people_picture{
+	    width: 44px;
+	    right: -25px;
+	    position: absolute;
+	    top: 4px;
+	    z-index: 1;
+}
+.social_block{
+	background: #00808f;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    border-radius: 0px 0px 4px 4px;
+    text-align: center;
+}
+.social_block{
+	/* font-size: 10px !Important; */
+	color: #fff;
+	font-size: 0.6vw;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
