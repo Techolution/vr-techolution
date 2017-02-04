@@ -5,9 +5,9 @@
         stat = id("currentFloor"),
         leftDoor = id("leftDoor"),
         rightDoor = id("rightDoor"),
-        // img = document.images,
+        img = document.images,
         c = 0;
-        img = document.getElementsByTagName('*');
+        //img = document.getElementsByTagName('*')
         tot = img.length;
         console.log(img);
 
@@ -29,10 +29,10 @@
       },4200);
     }
     for(var i=0; i<tot; i++) {
-      var tImg     = new Object();
-      tImg.onload  = imgLoaded();
-      //tImg.onerror = imgLoaded;
-      //tImg.src     = img[i].src;
+      var tImg     = new Image();
+      tImg.onload  = imgLoaded;
+      tImg.onerror = imgLoaded;
+      tImg.src     = img[i].src;
     }
   }
   document.addEventListener('DOMContentLoaded', loadbar, false);
