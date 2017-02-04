@@ -1,12 +1,12 @@
 .box_people{
-	width: 125px;
+	width: 135px;
 	height: 68px;
 	border-radius: 4px;
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 	background-color: #fff;
 	padding-left: 3px;
 	padding-top: 5px;
-	padding-right: 21px;
+	padding-right: 10px;
 	text-align: center;
 	font-family: 'Cormorant Garamond', serif;
 	padding-bottom: 14px;
@@ -18,6 +18,7 @@
 	left: 50%;
 	margin-left: -68px;
 	top: 50px;
+	/* padding-left: 16px; */
 }
 .box_people.left{
 	position: absolute;
@@ -27,7 +28,7 @@
 }
 .box_people.right{
 	position: absolute;
-	right: 30px;
+	right: 12px;
 	top: 50%;
 	margin-top: -25px;
 }
@@ -67,11 +68,17 @@
 	color: #99c546;
 }
 .people_picture{
-	    width: 46px;
-	    right: -25px;
-	    position: absolute;
-	    top: 4px;
-	    z-index: 1;
+    width: 46px;
+    position: absolute;
+    z-index: 1;
+}
+.box_people.right .people_picture,.box_people.left .people_picture{
+	top: -41px;
+    left: 36px;
+}
+.box_people.top .people_picture,.box_people.bottom .people_picture{
+	left: -31px;
+	top: 4px;
 }
 .social_block{
 	background: #00808f;
