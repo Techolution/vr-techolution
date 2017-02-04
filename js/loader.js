@@ -14,7 +14,7 @@
       c += 1;
       var perc = ((100/tot*c) << 0);
       var floorNum = perc*24/100;
-      stat.innerHTML = Math.abs(floorNum);
+      stat.innerHTML = Math.ceil(floorNum);
       if(c===tot) return doneLoading();
     }
     function doneLoading(){
