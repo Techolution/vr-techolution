@@ -1,0 +1,170 @@
+body{
+	font-family: sans-serif;
+}
+
+	.tiles, .techo-tile{
+		height: 50px;
+	    width: 50px;
+	    border-radius: 25px;
+		background-color: #07939F;
+		padding: 6px;
+		box-sizing: border-box;
+		text-align: center;
+		color: white;
+		font-family: sans-serif;
+		font-size: 5px;
+		cursor: pointer;
+	}
+
+	.tiles:hover {
+		box-shadow: -1px 10px 10px rgb(0,139,139);
+	}
+
+	.techo-tile{
+        height: 40px;
+	    width: 40px;
+	    border-radius: 20px;
+	    background-color: transparent;
+	    border: 1px solid #07939F;
+	    left: 70px;
+	    top: -10px;
+	    position: relative;
+	}
+
+
+	.svg-icon{
+		width: 25px;
+		height: 25px;
+		border-radius: 12px;
+		margin: 0px auto;
+	}
+
+	.svg-icon-lable{
+		text-align: center;
+		display: block;
+	}
+
+	.web-mobile{
+		    /*width: 30px;
+		    height: 30px;
+		    border-radius: 15px;*/
+	}
+
+	.iot{
+		position: relative;
+	    left: 130px;
+	    top: -90px;
+	}
+
+	.iot .svg-icon{
+	    width: 30px;
+	    height: 30px;
+	    border-radius: 15px;
+	    margin-top: -5px;
+	}
+
+	.cloud{
+		position: relative;
+	    left: 65px;
+	    top: -40px;
+	}
+
+	.cloud .svg-icon{
+		margin-top: -3px;
+	}
+
+	.tiles-container{
+	    width: 50%;
+	    margin: 0 auto;
+		width: auto;
+	}
+	.div{
+		text-align: center;
+		margin: 0px auto;
+		/*border: 1px solid red;*/
+		padding: 20px;
+	    width: 60%;
+        margin-top: 30px;
+		
+	}
+
+	#a:hover ~ #b {
+	    background: #ccc
+	}
+
+
+
+.clear{
+	clear: both;
+}
+
+.services-container{
+	margin: 0 auto;
+    margin-top: -50px;
+    width: 70%;
+}
+
+.rect{
+	width: 90%;
+	float: left;
+	background-color: #99C546;
+	height: 30px;
+	border-radius: 3px 0 0 3px;
+	margin-left: 6px;
+	/*border: 1px solid red;*/
+}
+
+.arrow-right {
+	width: 0; 
+	height: 0; 
+	border-top: 15px solid transparent;
+	border-bottom: 15px solid transparent;  
+	border-left: 15px solid #99C546;
+	float: left;
+}
+
+.service{
+    background-color: white;
+    height: 20px;
+    width: 27%;
+    margin: 5px 8px;
+    border-radius: 2px;
+    float: left;
+}
+
+.service:last-child {
+    margin-right: 5px;
+}
+.service-logo{
+    height: 20px;
+    width: 20px;    
+    float: left;
+}
+
+.service-content{
+	float: left;
+	text-align: center;
+	color: #07939F;
+}
+
+.service-content-h{
+    font-size: 7px;
+    line-height: 12px;
+}
+
+.service-content-d{
+	font-size: 5px;
+}
+
+.short-message{
+	margin: 0 auto;
+	text-align: center;
+	padding: 5px;
+	font-size: 9px;
+
+}
+
+.high-light{
+	color: #07939F;
+
+}
