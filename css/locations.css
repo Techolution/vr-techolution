@@ -37,6 +37,8 @@
 .loc-data a {
     color: rgb(0,127,142);
     text-decoration: none;
+    padding-left: 15px;
+    display: block;
 }
 .loc-data ul {
     margin: 0;
@@ -45,7 +47,6 @@
 }
 .loc-data ul li {
     margin-bottom: 5px;
-    padding-left: 15px;
 }
 .glocation{
 }
@@ -55,13 +56,52 @@
 }
 .location-right-box{float: left;width: 30%;position: relative;}
 .follow-box{font-size: 8px;margin-top: 38px;}
-.follow-links{margin: 0;padding: 0;list-style: none;display: block;}
+.follow-links{margin: 5px 0 0 0;padding: 0;list-style: none;display: block;}
 .twitter{
 }
 .linkedin{
 }
 .youtube{
 }
+div#nyc {
+    background: no-repeat url('../img/usa-map.svg') top center / contain;
+}
+div#hyd {
+    background: no-repeat url('../img/india-map.svg') top center / contain;
+}
+div#mu {
+    background: no-repeat url('../img/mauritius-map.svg') top center / contain;
+}
+div#singapore {
+    background: no-repeat url('../img/singapore.svg') top center / contain;
+}
+.glocation a {
+    background: no-repeat url(../img/map-pin.svg) top left;
+    background-size: 12px 12px;
+}
+.mail a {
+    background: no-repeat url(../img/mail.svg) top left;
+}
+.phone a {
+    background: no-repeat url(../img/Call.svg) top left;
+}
+.follow-links .twitter{}
+.follow-links .linkedin{}
+.follow-links .youtube{}
+  .follow-links .twitter a{}
+  .follow-links .linkedin a{}
+  .follow-links .youtube a{}
+    .follow-links li a {
+        display: block;
+        background: white;
+        height: 12px;
+        width: 12px;
+        text-align: center;
+        border-radius: 50%;
+        padding-top: 2px;
+        box-shadow: 1px 1px 3px 0px rgba(0,0,0,.3);
+        color: rgb(0,127,142);
+    }
 .loc-img img {
     display: block;
     margin: 0 auto;
@@ -75,5 +115,4 @@
 }
 .follow-links li {
     display: inline-block;
-    margin-right: 10px;
-}
+    margin-right: 5px;
