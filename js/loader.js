@@ -131,6 +131,7 @@
       // tImg.src     = img[i].src;
     // }
 	var countImages = $('body img').length;
+  var countLoadedImages = 0;
 	$('body').imagesLoaded()
 	  .always( function( instance ) {
 		console.log('all images loaded');
@@ -155,8 +156,9 @@
 		console.log( 'image is ' + result + ' for ' + image.img.src );
 		if(image.isLoaded) {
 			$(image.img).addClass('loaded');
+
       setTimeout(function(){
-			var countLoadedImages = $('body img.loaded').length;
+			countLoadedImages = $('body img.loaded').length;
     },100);
 			var perc = 100 * (countLoadedImages / countImages);
 			//console.log(width)
