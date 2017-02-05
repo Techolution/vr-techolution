@@ -160,7 +160,7 @@
 			var perc = 100 * (countLoadedImages / countImages);
 			//console.log(width)
 			var floorNum = perc*24/100;
-			//console.log(Math.floor(floorNum))
+			console.log(Math.floor(floorNum))
             stat.innerHTML = Math.ceil(floorNum);
 		  }
 	  });
