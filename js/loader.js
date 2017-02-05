@@ -40,6 +40,7 @@
 //   document.addEventListener('DOMContentLoaded', loadbar, false);
 // }());
 
+
 // ;(function(){
 // var imgContainer = document.getElementById("office"),
 // 	//progressBar = $("#currentFloor"),

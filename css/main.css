@@ -46,6 +46,7 @@ body {
     box-sizing: border-box;
 }
 
+
 #office {
     position: absolute;
     top: 50%;
@@ -70,7 +71,7 @@ body {
 
 #city {
     height: 100%;
-    z-index: 100;
+    z-index: 0;
     opacity: 1;
     position: absolute;
     top: 0;
@@ -101,6 +102,7 @@ body {
 
 #chair {
     z-index: 5000;
+    pointer-events:none;
 }
 
 #brandingWrapper {
@@ -187,6 +189,7 @@ body {
     position: absolute;
     left: 0;
     z-index: 9999;
+    display:none;
 }
 
 .colon {
@@ -228,6 +231,10 @@ body {
     left: 50%;
     transform: translateX(-50%) translateY(-50%) scale(.2);
 }
+#presentation-logo > svg{
+    width: 110px;
+    height:110px;
+}
 
 div#projector {
     position: absolute;
@@ -237,33 +244,29 @@ div#projector {
     width: 100%;
     height: 100%;
     background: rgba(255, 255, 255, .7);
+    opacity:0;
 }
 
-#projector:before {
-    z-index: -1;
+#projector > #frost {
+    z-index: 1;
     display: block;
     position: absolute;
     content: ' ';
     background-image: url('../img/nybg.jpg');
-    /* Prefix free isn't picking up this one */
-    -webkit-filter: url('#blur');
-    filter: url('#blur');
-    -webkit-filter: blur(7px);
     filter: blur(7px);
     background-size: cover;
     height: 100%;
     width: 100%;
-    opacity: .6;
-    overflow: hidden;
+    opacity: 1;
 }
 
 #city,
 #officeroom,
 #chair {
-    transition: filter 1s ease-in 0s;
-    transition: -web-filter 1s ease-in 0s;
-    transition: -moz-filter 1s ease-in 0s;
-    transition: -ms-filter 1s ease-in 0s;
+    transition: filter 0.5s ease-in 0s;
+    transition: -web-filter 0.5s ease-in 0s;
+    transition: -moz-filter 0.5s ease-in 0s;
+    transition: -ms-filter 0.5s ease-in 0s;
 }
 
 .trapezoid {
@@ -335,7 +338,7 @@ div#projector {
     color: rgb(104, 250, 233);
 }
 
-#projector .data-container > * {
+#projector .data-container > div {
     background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
     border-radius: 50%;
     bottom: -10%;
@@ -346,15 +349,14 @@ div#projector {
     overflow: hidden;
     padding: 0;
     position: absolute;
-    transform: scale(0.1);
-    transition: all 1s ease 0s, color 1.2s ease 0.5s, font-size 1.6s ease 0.8s, overflow 0.5s ease 1.7s;
+    //transform: scale(0.1);
+    //transition: all 1s ease 0s, color 1.2s ease 0.5s, font-size 1.6s ease 0.8s, overflow 0.5s ease 1.7s;
     visibility: hidden;
     width: 20px;
     z-index: -1;
 }
 
-#projector .data-container > *.active {
-    background: rgba(255, 255, 255, 0.2) none repeat scroll 0 0;
+#projector .data-container > .active {
     border-radius: 0;
     bottom: 0;
     color: #000;
@@ -363,10 +365,15 @@ div#projector {
     opacity: 1;
     overflow: hidden;
     padding: 10px;
-    transform: scale(1);
+    //transform: scale(1);
     visibility: visible;
     width: 100%;
     z-index: 1;
+}
+
+.PeopleData{
+    transform-origin: 50% 50%;
+    transform: scale(0.9);
 }
 
 body {

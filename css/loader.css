@@ -9,8 +9,9 @@
     font-family: 'VT323', monospace;
     /*animation-name: walkinElevator;
     animation-duration: 3s;*/
-
 }
+
+
 /*@keyframes walkinElevator {
   0%{
     opacity: 0;
@@ -21,7 +22,12 @@
     transform: scale(1);
   }
 }*/
-.elevator, .elevator:before, .elevator:after, .elevator *:before, .elevator *:after {
+
+.elevator,
+.elevator:before,
+.elevator:after,
+.elevator *:before,
+.elevator *:after {
     box-sizing: border-box;
 }
 #loadingTechoMsg{
@@ -63,7 +69,8 @@
     -webkit-transform: perspective(35vw) rotateY(-55deg) translateZ(-10vw);
 }
 
-.rightwall, .leftwall {
+.rightwall,
+.leftwall {
     height: 100vh;
     position: absolute;
     width: 55vw;
@@ -96,7 +103,8 @@
     bottom: 0;
 }
 
-.topwall, .bottomwall {
+.topwall,
+.bottomwall {
     height: 24.05vh;
 }
 
@@ -188,6 +196,7 @@
     padding: 10px;
     float: left;
     min-width: 107px;
+    display:none;
 }
 
 .panel-screen {
@@ -199,12 +208,15 @@
     font-size: 16px;
     line-height: 16px;
 }
+
 .techo-box .msg {
     position: relative;
     top: auto;
     visibility: visible;
 }
-.panel-screen:before, .techo-box:before {
+
+.panel-screen:before,
+.techo-box:before {
     content: "";
     position: absolute;
     width: 100%;
@@ -269,16 +281,17 @@
     height: 100%;
     position: relative;
     width: 50%;
-    overflow:hidden;
+    overflow: hidden;
 }
+
 .techo-box {
-	color: #fff;
-	font-size: 10px;
-	letter-spacing: 1px;
-	text-align: center;
-	font-family: 'Varela Round', sans-serif, Helvetica;
-  padding: 3px;
-  position: relative;
+    color: #fff;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-align: center;
+    font-family: 'Varela Round', sans-serif, Helvetica;
+    padding: 3px;
+    position: relative;
 }
 
 .blinker-arrow {
@@ -355,43 +368,59 @@
         width: 58vw;
     }
 }
-#leftDoor, #rightDoor{
-  transition: all 1s ease 1s;
+
+#leftDoor,
+#rightDoor {
+    transition: all 1s ease 1s;
 }
-#loaderElevator{
-  /*transition: all 2s ease 2s;*/
+
+#loaderElevator {
+    z-index: 9999;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
 }
-#loaderElevator.active{
-  animation-delay: 2s;
-  animation-duration: 2s;
-  animation-timing-function:linear;
-  animation-fill-mode: forwards;
+
+#loaderElevator.activeDisablred {
+    animation-name: openElevator;
+    animation-delay: 2s;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
 }
-#leftDoor{
-  left: 0%;
+
+#leftDoor {
+    left: 0%;
 }
-#rightDoor{
-  right: 0%;
+
+#rightDoor {
+    right: 0%;
 }
-#leftDoor.active{
-  left: -50%;
+
+#leftDoor.active {
+    left: -50%;
 }
-#rightDoor.active{
-  right: -50%;
+
+#rightDoor.active {
+    right: -50%;
 }
-.logo-svg{
-  background-image: url(../img/svglogo.svg);
-  height: 20px;
-background-repeat: no-repeat;
+
+.logo-svg {
+    background-image: url(../img/svglogo.svg);
+    height: 20px;
+    background-repeat: no-repeat;
 }
+
 @keyframes openElevator {
-  0%{
-    transform: scale(1);
-  }
-  100%{
-    transform: scale(5);
-  }
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(5);
+    }
 }
+
 @media all and (max-width: 550px) {
     .floors-list .button {
         font-size: 13px;
@@ -451,7 +480,8 @@ background-repeat: no-repeat;
         -moz-transform: perspective(100vw) rotateY(-75deg) translateZ(-20vw);
         -webkit-transform: perspective(100vw) rotateY(-75deg) translateZ(-20vw);
     }
-    .topwall, .bottomwall {
+    .topwall,
+    .bottomwall {
         height: 13vh;
     }
 }
@@ -478,7 +508,8 @@ background-repeat: no-repeat;
         top: 32vh;
         width: 54vw;
     }
-    .topwall, .bottomwall {
+    .topwall,
+    .bottomwall {
         height: 32.05vh;
     }
 }

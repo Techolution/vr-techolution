@@ -1,4 +1,5 @@
 window.onload = function() {
+    CSSPlugin.defaultForce3D = true;
     var coOrdinates = initScene();
     initialAnimation(coOrdinates);
     activateScreenTable();
@@ -8,6 +9,8 @@ window.onresize = setScreen;
 
 function initScene() {
     var init = setScreen();
+    $('.blinker-arrow').hide();
+    TweenLite.set($('#hall'), { scale: getElevatorScale(), transformOrigin: '50% 50%' });
     TweenLite.set($('#projector, #presentationMenu li'), { opacity: 0 });
     //TweenLite.to('body', 0.3, { opacity: 1 });
     textToSpan(document.getElementById('hydMsg'));
@@ -18,18 +21,46 @@ function initScene() {
     return init;
 }
 
+function getElevatorScale(){
+    var doorHeight = $('.centerwall').height();
+    var officeHeight = $('#office').height();
+    //officeHeight * scale = doorHeight
+    var scale = doorHeight / officeHeight;
+    return scale;
+}
+
+function getCenterWallScale(){
+    var doorWidth = $('.centerwall').width();
+    //doorWidth * scale = window.innerWidth
+    return window.innerWidth / doorWidth;
+}
+
 function activateScreenTable() {
-    $('#presentationMenu li a').on('click', function() {
+    $('#presentationMenu').on('click', '#team', function() {
         $('#presentationMenu li a.active').removeClass('active');
         $(this).addClass('active');
-        TweenLite.to(this, 0.5, { scale: 1.3 });
-        TweenLite.to('#projector', 1, { opacity: 1 });
+
+        $('.data-container > .active').removeClass('active');
+        $('.PeopleData').addClass('active');
+    });
+    $('#presentationMenu').on('click', '#settings', function() {
+        $('#presentationMenu li a.active').removeClass('active');
+        $(this).addClass('active');
+
+        $('.data-container > .active').removeClass('active');
+        $('.vision2020').addClass('active');
+    });
+    $('#presentationMenu').on('click', '#location', function() {
+        $('#presentationMenu li a.active').removeClass('active');
+        $(this).addClass('active');
+
+        $('.data-container > .active').removeClass('active');
+        $('.contactUsData').addClass('active');
     });
 }
 
 function showTextTyping(ele, scale, initialDelay, timeScale, yoyo, revealInterval) {
     var $cursor = $(".text-caret"),
-        revealInterval = revealInterval,
         $chars = ele.find(".l"),
         tl = new TimelineMax({
             delay: initialDelay,
@@ -37,33 +68,35 @@ function showTextTyping(ele, scale, initialDelay, timeScale, yoyo, revealInterva
             yoyo: yoyo,
             repeatDelay: 1,
             onRepeat: function() {
-                tl.timeScale(1.8);
+                tl.timeScale(1.5);
                 TweenLite.set($cursor, { opacity: true });
             }
         });
 
-    tl.call(blink); // this makes the cursor resume blinking after reversing
-    tl.set($cursor, { opacity: 1 }, 0.1); // this makes it visible (not blinking) when playing forward
+    //tl.add(blink); // this makes the cursor resume blinking after reversing
+    //tl.set($cursor, { opacity: 1 }, 0.1); // this makes it visible (not blinking) when playing forward
 
     //loop throug all the chars and make them visible AND set cursor to their right at same time
     $chars.each(function(index, element) {
         var $element = $(element);
-        var offset = $element.position();
-        var width = $element.width() / scale;
-        tl.set($cursor, { left: offset.left + width + 2 }, (index + 1) * revealInterval);
+        //var offset = $element.position();
+        //var width = $element.width() * scale;
+        //console.log("scale", scale, width);
+        //tl.set($cursor, { left: offset.left + width + 2 }, (index + 1) * revealInterval);
         tl.set($element, { autoAlpha: 1 }, (index + 1) * revealInterval);
     });
 
-    tl.call(blink); // resume blinking after last character is revealed
+    //tl.add(blink); // resume blinking after last character is revealed
 
     //enable the blinking cursor
     function blink() {
         TweenMax.fromTo($cursor, 0.5, { opacity: 0 }, { opacity: 1, repeat: -1, ease: SteppedEase.config(1) });
     }
 
-    TweenLite.set(ele, { visibility: "visible" });
+    tl.add(TweenLite.set(ele, { visibility: "visible" }));
     tl.timeScale(timeScale);
-    blink();
+    //tl.add(blink);
+    return tl;
 }
 
 function getScale() {
@@ -75,82 +108,114 @@ function getScale() {
 
 function initialAnimation(point) {
     var scale = getScale();
+    var elevatorScale = getCenterWallScale();
     var storyAnime = new TimelineMax();
-    var welcome = new TimelineMax({ delay: 100 });
-    storyAnime
-        .to(hall, 1, { // change while deployment
-            scale: scale * 0.8,
-            delay: 5,
-            transformOrigin: '50% 50%'
-        })
-        .to(hall, 1, { // change while deployment
+    var welcome = new TimelineMax({delay: 3});
+    welcome.timeScale(1);
+    welcome.add(TweenLite.to('#office', 1.2, {
+        scale: elevatorScale,
+        transformOrigin: '50% 50%',
+        force3D:true
+    }), "officeZoomWithElevator");
+
+    welcome.add(TweenLite.to('#loaderElevator', 0.7, {
+        scale: elevatorScale + 0.2,
+        transformOrigin: '50% 50%',
+        onComplete: function(){
+            $('#loaderElevator').hide();
+        }
+    }), "elevatorZoom");
+
+    welcome.add(TweenLite.to($('#office'), 0.4, {
             scale: scale,
+            delay: 0.1,
             ease: SlowMo.ease.config(0.2, 0.2, false),
-            delay: 2,
             transformOrigin: '50% 50%'
-        })
-        .fromTo($('.trapezoid'), 1.3, {
+        }), "sitDownToTable");
+
+    //ele, scale, initialDelay, timeScale, yoyo, revealInterval
+    welcome.add(showTextTyping($('#hydMsg'), scale, 0.1, 1, true, 0.02));
+    welcome.add(showTextTyping($('#turnOnMsg'), scale, 0.1, 1, true, 0.02));
+
+    welcome.add(TweenMax
+        .fromTo($('.trapezoid'), 0.4, {
             scale: 0,
             opacity: 0,
             borderRadius: 100
         }, {
             opacity: 0.3,
             scale: 1,
-            borderRadius: 0,
-            ease: Power2.easeInOut,
-            delay: 3
-        })
-        .to($('.trapezoid'), 0.5, {
+            borderRadius: 0
+        }),
+    "powerOnPresentation");
+
+    welcome.add(TweenMax.to($('.trapezoid'), 0.5, {
             opacity: 1,
             ease: Power2.easeInOut
-        })
-        .to($('#presentation-logo'), 0.5, {
+        }));
+
+    welcome.add(TweenMax.to($('#presentation-logo'), 0.5, {
             autoAlpha: 1,
             ease: Power2.easeInOut
-        })
-        .to($('#presentation-logo'), 0.25, {
-            scale: .3,
+        }));
+    welcome.add(
+        TweenMax.to($('#presentation-logo'), 0.25, {
+            scale: 0.3,
             ease: Back.easeInOut
-        })
-        .to($('#presentation-logo'), 0.15, {
-            scale: .2,
-            ease: Back.easeInOut,
-            onComplete: function() {
-                var elem = $('#officeroom, #chair');
-                setRoomLight(elem, 0.6, 1.3);
-            }
-        })
-        .to($('#presentation-logo'), 0.15, {
+        }));
+
+    welcome.add(
+        TweenMax.to($('#presentation-logo'), 0.15, {
+            scale: 0.2,
+            ease: Back.easeInOut
+        }));
+
+    welcome.add(setRoomLight($('#officeroom, #chair'), 0.6, 1.3));
+
+    welcome.add(
+        TweenMax.to('#projector', 1.5, {
+            opacity: 1,
+            delay: 0
+        }));
+
+    welcome.add(
+        TweenMax.to($('#presentation-logo'), 0.15, {
             scale: 0,
-            delay: 7,
             ease: Back.easeInOut
-        })
-        .staggerFromTo($('#presentationMenu li'), 0.7, {
+        }));
+
+    welcome.add(TweenMax.staggerFromTo($('#presentationMenu li'), 1.2, {
             scale: 0,
             borderRadius: 100
         }, {
             opacity: 1,
-            scale: 1,
+            scale: 0.8,
             borderRadius: 0,
             ease: Power2.easeInOut
-        }, 0.3).
-        to('#projector', 1, { 
-            opacity: 1,
-            delay: 0
-        });
+        }, 0.3));
+
+    welcome.add(showTextTyping($('#visionMsg'), scale, 0, 0.6, false, 0.02));
+
+    welcome.add(function(){
+        $('.data-container').removeClass('active');
+        $('.vision2020').addClass('active');
+    });
+
+
+
     //ele, scale, initialDelay, timeScale, yoyo, revealInterval
-    showTextTyping($('#hydMsg'), scale, 1, 0.5, true, 0.01);
-    showTextTyping($('#seatedMsg'), scale, 4, 0.6, true, 0.01);
-    showTextTyping($('#turnOnMsg'), scale, 7, 0.6, true, 0.01); //real turn on :)
-    showTextTyping($('#turnOffMsg'), scale, 9, 0.6, true, 0.01); //it was quick! turn off now
-    showTextTyping($('#visionMsg'), scale, 12, 0.6, false, 0.02);
+    //showTextTyping($('#hydMsg'), scale, 1, 1, true, 0.01);
+    //showTextTyping($('#seatedMsg'), scale, 4, 0.6, true, 0.01);
+    //showTextTyping($('#turnOnMsg'), scale, 7, 0.6, true, 0.01); //real turn on :)
+    //showTextTyping($('#turnOffMsg'), scale, 9, 0.6, true, 0.01); //it was quick! turn off now
+    //showTextTyping($('#visionMsg'), scale, 12, 0.6, false, 0.02);
     /*
 
 */
 }
 
 function setRoomLight(elem, brightness, delay) {
-    TweenLite.to(elem, .7, { css: { 'filter': 'brightness(' + brightness + ') hue-rotate(10deg) saturate(300%)' }, delay: delay });
+    return TweenLite.to(elem, .7, { css: { 'filter': 'brightness(' + brightness + ') hue-rotate(10deg) saturate(300%)' }, delay: delay });
 }
 
 function textToSpan(ele) {
