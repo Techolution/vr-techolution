@@ -155,16 +155,16 @@
 		console.log( 'image is ' + result + ' for ' + image.img.src );
 		if(image.isLoaded) {
 			$(image.img).addClass('loaded');
-
+      setTimeout(function(){
 			var countLoadedImages = $('body img.loaded').length;
-
+    },100);
 			var perc = 100 * (countLoadedImages / countImages);
 			//console.log(width)
 			var floorNum = perc*24/100;
 			console.log(Math.floor(floorNum))
       setTimeout(function(){
         stat.innerHTML = Math.ceil(floorNum);
-      },100);
+      },50);
 
 		  }
 	  });
