@@ -134,8 +134,7 @@
 	$('body').imagesLoaded()
 	  .always( function( instance ) {
 		console.log('all images loaded');
-    console.log('all images successfully loaded');
-		setTimeout(function(){
+    setTimeout(function(){
 			ovrl.className += ' active';
 			leftDoor.className += ' active';
 			rightDoor.className += ' active';
@@ -145,14 +144,15 @@
 		  },4200);
 	  })
 	  .done( function( instance ) {
+		console.log('all images successfully loaded');
 
 	  })
 	  .fail( function() {
 		console.log('all images loaded, at least one is broken');
 	  })
 	  .progress( function( instance, image ) {
-		var result = image.isLoaded ? 'loaded' : 'broken';
-		console.log( 'image is ' + result + ' for ' + image.img.src );
+		//var result = image.isLoaded ? 'loaded' : 'broken';
+		//console.log( 'image is ' + result + ' for ' + image.img.src );
 		if(image.isLoaded) {
 			$(image.img).addClass('loaded');
 
@@ -161,8 +161,7 @@
 			var perc = 100 * (countLoadedImages / countImages);
 			//console.log(width)
 			var floorNum = perc*24/100;
-			console.log(Math.floor(floorNum));
-
+			console.log(Math.floor(floorNum))
             stat.innerHTML = Math.ceil(floorNum);
 		  }
 	  });
