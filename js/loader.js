@@ -134,9 +134,7 @@
 	$('body').imagesLoaded()
 	  .always( function( instance ) {
 		console.log('all images loaded');
-	  })
-	  .done( function( instance ) {
-		console.log('all images successfully loaded');
+    console.log('all images successfully loaded');
 		setTimeout(function(){
 			ovrl.className += ' active';
 			leftDoor.className += ' active';
@@ -145,6 +143,9 @@
 		  setTimeout(function(){
 			ovrl.style.display = "none";
 		  },4200);
+	  })
+	  .done( function( instance ) {
+
 	  })
 	  .fail( function() {
 		console.log('all images loaded, at least one is broken');
