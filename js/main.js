@@ -111,7 +111,10 @@ function initialAnimation(point) {
     var elevatorScale = getCenterWallScale();
     var storyAnime = new TimelineMax();
     var welcome = new TimelineMax({delay: 3});
+    var welcomeText = new TimelineMax({delay: 3});
     welcome.timeScale(1);
+    welcomeText.timeScale(1);
+
     welcome.add(TweenLite.to('#office', 1.2, {
         scale: elevatorScale,
         transformOrigin: '50% 50%',
@@ -134,11 +137,12 @@ function initialAnimation(point) {
         }), "sitDownToTable");
 
     //ele, scale, initialDelay, timeScale, yoyo, revealInterval
-    welcome.add(showTextTyping($('#hydMsg'), scale, 0.1, 1, true, 0.02));
-    welcome.add(showTextTyping($('#turnOnMsg'), scale, 0.1, 1, true, 0.02));
+    welcomeText.add(showTextTyping($('#hydMsg'), scale, 0, 0.7, true, 0.01));
+    welcomeText.add(showTextTyping($('#turnOnMsg'), scale, 0, 0.7, true, 0.01));
+    welcomeText.add(showTextTyping($('#visionMsg'), scale, 0, 0.7, false, 0.01));
 
-    welcome.add(TweenMax
-        .fromTo($('.trapezoid'), 0.4, {
+    welcome.add([TweenMax
+        .fromTo($('.trapezoid'), 0.25, {
             scale: 0,
             opacity: 0,
             borderRadius: 100
@@ -146,18 +150,48 @@ function initialAnimation(point) {
             opacity: 0.3,
             scale: 1,
             borderRadius: 0
-        }),
-    "powerOnPresentation");
-
-    welcome.add(TweenMax.to($('.trapezoid'), 0.5, {
+        }),TweenMax.to($('.trapezoid'), 0.15, {
             opacity: 1,
             ease: Power2.easeInOut
-        }));
-
-    welcome.add(TweenMax.to($('#presentation-logo'), 0.5, {
+        }), setRoomLight($('#officeroom, #chair'), 0.6, 0.1),
+        TweenMax.to($('#presentation-logo'), 0.1, {
             autoAlpha: 1,
             ease: Power2.easeInOut
+        })]);
+
+    welcome.add(
+        TweenMax.to('#projector', 0.1, {
+            opacity: 1,
+            delay: 0
         }));
+
+    welcome.add(
+        TweenMax.to($('#presentation-logo'), 0.15, {
+            scale: 0,
+            ease: Back.easeInOut
+        }));
+    welcome.add(function(){
+        $('.vision2020').addClass('active');
+    });
+    welcome.add(TweenMax.staggerFromTo($('#presentationMenu li'), 1.2, {
+            scale: 0,
+            borderRadius: 100
+        }, {
+            opacity: 1,
+            scale: 0.8,
+            borderRadius: 0,
+            ease: Power2.easeInOut
+        }, 0.3));
+
+
+
+    //ele, scale, initialDelay, timeScale, yoyo, revealInterval
+    //showTextTyping($('#hydMsg'), scale, 1, 1, true, 0.01);
+    //showTextTyping($('#seatedMsg'), scale, 4, 0.6, true, 0.01);
+    //showTextTyping($('#turnOnMsg'), scale, 7, 0.6, true, 0.01); //real turn on :)
+    //showTextTyping($('#turnOffMsg'), scale, 9, 0.6, true, 0.01); //it was quick! turn off now
+    //showTextTyping($('#visionMsg'), scale, 12, 0.6, false, 0.02);
+    /* Thrash
     welcome.add(
         TweenMax.to($('#presentation-logo'), 0.25, {
             scale: 0.3,
@@ -169,48 +203,6 @@ function initialAnimation(point) {
             scale: 0.2,
             ease: Back.easeInOut
         }));
-
-    welcome.add(setRoomLight($('#officeroom, #chair'), 0.6, 1.3));
-
-    welcome.add(
-        TweenMax.to('#projector', 1.5, {
-            opacity: 1,
-            delay: 0
-        }));
-
-    welcome.add(
-        TweenMax.to($('#presentation-logo'), 0.15, {
-            scale: 0,
-            ease: Back.easeInOut
-        }));
-
-    welcome.add(TweenMax.staggerFromTo($('#presentationMenu li'), 1.2, {
-            scale: 0,
-            borderRadius: 100
-        }, {
-            opacity: 1,
-            scale: 0.8,
-            borderRadius: 0,
-            ease: Power2.easeInOut
-        }, 0.3));
-
-    welcome.add(showTextTyping($('#visionMsg'), scale, 0, 0.6, false, 0.02));
-
-    welcome.add(function(){
-        $('.data-container').removeClass('active');
-        $('.vision2020').addClass('active');
-    });
-
-
-
-    //ele, scale, initialDelay, timeScale, yoyo, revealInterval
-    //showTextTyping($('#hydMsg'), scale, 1, 1, true, 0.01);
-    //showTextTyping($('#seatedMsg'), scale, 4, 0.6, true, 0.01);
-    //showTextTyping($('#turnOnMsg'), scale, 7, 0.6, true, 0.01); //real turn on :)
-    //showTextTyping($('#turnOffMsg'), scale, 9, 0.6, true, 0.01); //it was quick! turn off now
-    //showTextTyping($('#visionMsg'), scale, 12, 0.6, false, 0.02);
-    /*
-
 */
 }
 
