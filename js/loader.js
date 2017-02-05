@@ -133,10 +133,10 @@
 	var countImages = $('body img').length;
 	$('body').imagesLoaded()
 	  .always( function( instance ) {
-		//console.log('all images loaded');
+		console.log('all images loaded');
 	  })
 	  .done( function( instance ) {
-		//console.log('all images successfully loaded');
+		console.log('all images successfully loaded');
 		setTimeout(function(){
 			ovrl.className += ' active';
 			leftDoor.className += ' active';
@@ -147,11 +147,11 @@
 		  },4200);
 	  })
 	  .fail( function() {
-		//console.log('all images loaded, at least one is broken');
+		console.log('all images loaded, at least one is broken');
 	  })
 	  .progress( function( instance, image ) {
-		//var result = image.isLoaded ? 'loaded' : 'broken';
-		//console.log( 'image is ' + result + ' for ' + image.img.src );
+		var result = image.isLoaded ? 'loaded' : 'broken';
+		console.log( 'image is ' + result + ' for ' + image.img.src );
 		if(image.isLoaded) {
 			$(image.img).addClass('loaded');
 
