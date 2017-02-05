@@ -131,7 +131,6 @@
       // tImg.src     = img[i].src;
     // }
 	var countImages = $('body img').length;
-  var countLoadedImages = 0;
 	$('body').imagesLoaded()
 	  .always( function( instance ) {
 		console.log('all images loaded');
@@ -157,17 +156,14 @@
 		if(image.isLoaded) {
 			$(image.img).addClass('loaded');
 
-      setTimeout(function(){
-			countLoadedImages = $('body img.loaded').length;
-    },100);
+			var countLoadedImages = $('body img.loaded').length;
+
 			var perc = 100 * (countLoadedImages / countImages);
 			//console.log(width)
 			var floorNum = perc*24/100;
-			console.log(Math.floor(floorNum))
-      setTimeout(function(){
-        stat.innerHTML = Math.ceil(floorNum);
-      },50);
+			console.log(Math.floor(floorNum));
 
+            stat.innerHTML = Math.ceil(floorNum);
 		  }
 	  });
     }
