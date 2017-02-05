@@ -162,7 +162,10 @@
 			//console.log(width)
 			var floorNum = perc*24/100;
 			console.log(Math.floor(floorNum))
-            stat.innerHTML = Math.ceil(floorNum);
+      setTimeout(function(){
+        stat.innerHTML = Math.ceil(floorNum);
+      },100);
+
 		  }
 	  });
     }
