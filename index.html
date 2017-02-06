@@ -113,7 +113,7 @@
                             <div class="vision2020 ">
                                 <div class="v-h-center">
                                 <div class="div">
-                                  <div class="tiles-container">
+                                  <div class="tiles-container" id="m-vision-div">
                                     <div class="tiles">
                                       <div class="svg-icon web-mobile">
                                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -344,12 +344,18 @@
                                       <lable class="svg-icon-lable"> Cloud Transformation </lable>
                                     </div>
                                   </div>
-
+                                  <div id="agilePassBigDataContainer">
+                                      <div id="agilePassBigDataContent">
+                                        <button type="button" id="m-close-btn" onclick="hideAgilePassBigDataContent()"> close </button>
+                                        <p id="m-content">and here you can keep your content</p>
+                                      </div>
+                                        
+                                  </div>
                                 </div>
 
                                 <div class="services-container">
                                   <div class="rect">
-                                    <div class="service">
+                                    <div class="service" onclick="showAgilePassBigDataContent('agile')">
                                       <div class="service-logo">
                                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                    viewBox="0 0 110 110" style="enable-background:new 0 0 110 110;" xml:space="preserve">
@@ -443,7 +449,7 @@
                                     </div>
 
 
-                                    <div class="service">
+                                    <div class="service" onclick="showAgilePassBigDataContent('pass')">
                                       <div class="service-logo">
                                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                    viewBox="0 0 110 110" style="enable-background:new 0 0 110 110;" xml:space="preserve">
@@ -508,7 +514,7 @@
                                     </div>
 
 
-                                    <div class="service">
+                                    <div class="service" onclick="showAgilePassBigDataContent('bigdata')">
                                       <div class="service-logo">
                                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                    viewBox="0 0 110 110" style="enable-background:new 0 0 110 110;" xml:space="preserve">
