@@ -190,5 +190,8 @@
     #presentationMenu li{
         opacity: 0;
     }
+    .mobile{
+        display: block;
+    }
     
 }
