@@ -1,13 +1,21 @@
 window.onload = function() {
+    if(window.innerWidth >480){
     CSSPlugin.defaultForce3D = true;
     var coOrdinates = initScene();
     initialAnimation(coOrdinates);
     activateScreenTable();
+}
+else{
+    activateScreenTable();
+    $('.vision2020').addClass('active');
+}
 };
 
 window.onresize = setScreen;
 
 function initScene() {
+    console.log("windowsize",window.innerWidth);
+    if(window.innerWidth >480){
     var init = setScreen();
     $('.blinker-arrow').hide();
     TweenLite.set($('#hall'), { scale: getElevatorScale(), transformOrigin: '50% 50%' });
@@ -19,6 +27,10 @@ function initScene() {
     textToSpan(document.getElementById('turnOffMsg'));
     textToSpan(document.getElementById('visionMsg'));
     return init;
+    }
+    else{
+        //return;
+    }
 }
 
 function getElevatorScale(){
