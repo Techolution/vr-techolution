@@ -324,9 +324,10 @@
         width: 100px;
     }
     .panel-box {
-        margin-top: 60px;
-        max-width: 60px;
-        margin-left: 11px;
+      margin-top: 60px;
+max-width: 60px;
+margin-left: 5px;
+min-width: 90px;
     }
     .metal {
         box-shadow: 0px 0px 100px 10px black inset;
@@ -417,10 +418,10 @@
         width: 50% !important;
     }
     .panel-box {
-        padding: 7px;
-        max-width: 60px;
-        margin-left: 8px;
-        min-width: 50px;
+      padding: 5px;
+  max-width: 60px;
+  margin-left: 3px;
+  min-width: 80px;
     }
     .centerwall-inner .button-panel {
         width: 88px;
@@ -446,6 +447,9 @@
     }
     .centerwall .door-panel {
         width: calc(100% - 58px);
+    }
+    .techo-box{
+      font-size: 7px;
     }
 }
 
