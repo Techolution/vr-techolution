@@ -56,12 +56,12 @@
     height: 54.3px;
     left: 68px;
     position: absolute;
-    width: 179px;
+    width: 213px;
     z-index: 9930;
     opacity: 1;
     transform-origin: 47% 0px 0px;
     transform: matrix3d(1, 0, 0, 0, 0, 0, 1, 0, 0, -1, 2, 4, 0, -1, 0, 1);
-    bottom: 59px;
+    bottom: 72px;
     right: 0;
  }
     div#projector{
