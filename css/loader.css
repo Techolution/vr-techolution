@@ -189,7 +189,7 @@
     max-width: 107px;
     padding: 10px;
     float: left;
-    min-width: 140px;
+    /* min-width: 140px; */
 }
 
 .techomsg {
@@ -277,7 +277,7 @@
     font-size: 10px;
     letter-spacing: 1px;
     text-align: center;
-    font-family: 'Varela Round', sans-serif, Helvetica;
+    /* font-family: 'Varela Round', sans-serif, Helvetica; */
     padding: 3px;
     position: relative;
 }
@@ -420,6 +420,7 @@
         padding: 7px;
         max-width: 60px;
         margin-left: 8px;
+        min-width: 50px;
     }
     .centerwall-inner .button-panel {
         width: 88px;
@@ -428,7 +429,7 @@
         width: calc(100% - 88px);
     }
     .panel-screen {
-        font-size: 20px;
+        font-size: 10px;
         line-height: 20px;
     }
 }
@@ -438,9 +439,10 @@
         width: 58px;
     }
     .panel-box {
-        padding: 7px;
-        max-width: 30px;
-        margin-left: 8px;
+        padding: 3px;
+        max-width: 50px;
+        margin-left: 3px;
+        min-width: 20px;
     }
     .centerwall .door-panel {
         width: calc(100% - 58px);
@@ -471,7 +473,18 @@
     }
     .topwall,
     .bottomwall {
-        height: 13vh;
+      height: 13vh;
+    }
+    .blinker-arrow {
+      right: 6px;
+    }
+    .techo-box {
+      font-size: 8px;
+      word-break: break-word;
+    }
+    .logo-svg {
+      height: 8px;
+      margin: 5px 0;
     }
 }
 
