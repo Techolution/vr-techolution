@@ -43,10 +43,6 @@ body {
     bottom: 0;
     right: 0;
     font-family: 'Varela Round', sans-serif, Helvetica;
-    transform-style: preserve-3d;
-    perspective: 1200px;
-    -webkit-text-size-adjust: none
-    /*opacity: 0;*/
 }
 
 *,
