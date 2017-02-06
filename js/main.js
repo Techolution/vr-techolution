@@ -1,16 +1,54 @@
-window.onload = function() {
-    if (window.innerWidth > 480) {
-        var coOrdinates = initScene();
-        initialAnimation(coOrdinates);
-        activateScreenTable();
-    } else {
-        activateScreenTable();
-        $('.vision2020').addClass('active');
-    }
+window.onload = function() {   
+    if(window.innerWidth >480){
+    var coOrdinates = initScene();
+    initialAnimation(coOrdinates);
+    activateScreenTable();
+}
+else{
+    initialAnimationMobile();
+    activateScreenTable();
+
+    
+}
+
 };
 
 window.onresize = setScreen;
+function initialAnimationMobile(){
+    var storyAnime = new TimelineMax();
+    var welcome = new TimelineMax({delay: 4});
+    var welcomeText = new TimelineMax({delay: 4});
+    // var scale = getScale();
+    //  welcomeText.add(showTextTyping($('#hydMsg'), scale, 0, 0.7, true, 0.01));
+    // welcomeText.add(showTextTyping($('#turnOnMsg'), scale, 0, 0.7, true, 0.01));
+    // welcomeText.add(showTextTyping($('#visionMsg'), scale, 0, 0.7, false, 0.01));
 
+   
+
+    welcome.add(
+        TweenMax.to('#projector', 0.1, {
+            opacity: 1,
+            delay: 0
+        }));
+
+    welcome.add(
+        TweenMax.to($('#presentation-logo'), 0.15, {
+            scale: 0,
+            ease: Back.easeInOut
+        }));
+    welcome.add(function(){
+        $('.vision2020').addClass('active');
+    });
+    welcome.add(TweenMax.staggerFromTo($('#presentationMenu li'), 1.2, {
+            scale: 0,
+            borderRadius: 100
+        }, {
+            opacity: 1,
+            scale: 0.8,
+            borderRadius: 0,
+            ease: Power2.easeInOut
+        }, 0.3));
+}
 function initScene() {
     console.log("windowsize", window.innerWidth);
     if (window.innerWidth > 480) {
