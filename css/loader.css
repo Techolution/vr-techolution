@@ -6,7 +6,7 @@
     position: relative;
     width: 100vw;
     z-index: 100;
-    font-family: 'VT323', monospace;
+    /*font-family: 'VT323', monospace;*/
     /*animation-name: walkinElevator;
     animation-duration: 3s;*/
 }
@@ -29,12 +29,6 @@
 .elevator *:before,
 .elevator *:after {
     box-sizing: border-box;
-}
-#loadingTechoMsg{
-  opacity: 0; visibility: hidden; transition: all .5s ease 0s;
-}
-#loadingTechoMsg.active{
-  opacity: 1; visibility: visible;
 }
 .metal {
     background-color: hsl(0, 0%, 90%);
@@ -190,17 +184,12 @@
 
 .panel-box {
     box-shadow: 1px 2px 14px -7px #000 inset;
-    margin-left: 21px;
+    margin-left: 5px;
     margin-top: 60px;
     max-width: 107px;
     padding: 10px;
     float: left;
-    min-width: 107px;
-}
-
-.panel-screen {
-    margin-bottom: 15px;
-    position: relative;
+    min-width: 140px;
 }
 
 .techomsg {
@@ -229,9 +218,9 @@
 
 .panel-screen {
     color: #e0e1e2;
-    font-size: 30px;
-    line-height: 30px;
-    margin-bottom: 15px;
+    font-size: 25px;
+    line-height: 35px;
+    margin-bottom: 10px;
     position: relative;
     text-align: center;
 }
@@ -409,6 +398,7 @@
     background-image: url(../img/svglogo.svg);
     height: 20px;
     background-repeat: no-repeat;
+    margin: 15px 0;
 }
 
 @keyframes openElevator {
