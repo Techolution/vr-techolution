@@ -1,39 +1,36 @@
 window.onload = function() {
-    if(window.innerWidth >480){
-    CSSPlugin.defaultForce3D = true;
-    var coOrdinates = initScene();
-    initialAnimation(coOrdinates);
-    activateScreenTable();
-}
-else{
-    activateScreenTable();
-    $('.vision2020').addClass('active');
-}
+    if (window.innerWidth > 480) {
+        var coOrdinates = initScene();
+        initialAnimation(coOrdinates);
+        activateScreenTable();
+    } else {
+        activateScreenTable();
+        $('.vision2020').addClass('active');
+    }
 };
 
 window.onresize = setScreen;
 
 function initScene() {
-    console.log("windowsize",window.innerWidth);
-    if(window.innerWidth >480){
-    var init = setScreen();
-    $('.blinker-arrow').hide();
-    TweenLite.set($('#hall'), { scale: getElevatorScale(), transformOrigin: '50% 50%' });
-    TweenLite.set($('#projector, #presentationMenu li'), { opacity: 0 });
-    //TweenLite.to('body', 0.3, { opacity: 1 });
-    textToSpan(document.getElementById('hydMsg'));
-    textToSpan(document.getElementById('seatedMsg'));
-    textToSpan(document.getElementById('turnOnMsg'));
-    textToSpan(document.getElementById('turnOffMsg'));
-    textToSpan(document.getElementById('visionMsg'));
-    return init;
-    }
-    else{
+    console.log("windowsize", window.innerWidth);
+    if (window.innerWidth > 480) {
+        var init = setScreen();
+        $('.blinker-arrow').hide();
+        TweenLite.set($('#hall'), { scale: getElevatorScale(), transformOrigin: '50% 50%' });
+        TweenLite.set($('#projector, #presentationMenu li'), { opacity: 0 });
+        //TweenLite.to('body', 0.3, { opacity: 1 });
+        textToSpan(document.getElementById('hydMsg'));
+        textToSpan(document.getElementById('seatedMsg'));
+        textToSpan(document.getElementById('turnOnMsg'));
+        textToSpan(document.getElementById('turnOffMsg'));
+        textToSpan(document.getElementById('visionMsg'));
+        return init;
+    } else {
         //return;
     }
 }
 
-function getElevatorScale(){
+function getElevatorScale() {
     var doorHeight = $('.centerwall').height();
     var officeHeight = $('#office').height();
     //officeHeight * scale = doorHeight
@@ -41,7 +38,7 @@ function getElevatorScale(){
     return scale;
 }
 
-function getCenterWallScale(){
+function getCenterWallScale() {
     var doorWidth = $('.centerwall').width();
     //doorWidth * scale = window.innerWidth
     return window.innerWidth / doorWidth;
@@ -66,9 +63,49 @@ function activateScreenTable() {
         $('#presentationMenu li a.active').removeClass('active');
         $(this).addClass('active');
 
+        $('#presentationMenu').hide();
+        $('#mapmenu').show();
+
         $('.data-container > .active').removeClass('active');
         $('.contactUsData').addClass('active');
     });
+    activateMapLocations();
+}
+
+function activateMapLocations() {
+    //hyd, nyc, mu, singapore
+    //india, ny, africa, sng
+    $('#mapmenu').on('click', '#ny', function() {
+        $('#mapmenu .active').removeClass('active');
+        $(this).addClass('active');
+        $('.contactUsData > .active').removeClass('active');
+        $('.contactUsData #nyc').addClass('active');
+    });
+    $('#mapmenu').on('click', '#india', function() {
+        $('#mapmenu .active').removeClass('active');
+        $(this).addClass('active');
+        $('.contactUsData > .active').removeClass('active');
+        $('.contactUsData #hyd').addClass('active');
+    });
+    $('#mapmenu').on('click', '#africa', function() {
+        $('#mapmenu .active').removeClass('active');
+        $(this).addClass('active');
+        $('.contactUsData > .active').removeClass('active');
+        $('.contactUsData #mu').addClass('active');
+    });
+    $('#mapmenu').on('click', '#sng', function() {
+        $('#mapmenu .active').removeClass('active');
+        $(this).addClass('active');
+        $('.contactUsData > .active').removeClass('active');
+        $('.contactUsData #singapore').addClass('active');
+    });
+
+    /*backbutton*/
+    $('#mapmenu').on('click', '#back', function() {
+        $('#mapmenu').hide();
+        $('#presentationMenu').show();
+    });
+
 }
 
 function showTextTyping(ele, scale, initialDelay, timeScale, yoyo, revealInterval) {
@@ -122,36 +159,36 @@ function initialAnimation(point) {
     var scale = getScale();
     var elevatorScale = getCenterWallScale();
     var storyAnime = new TimelineMax();
-    var welcome = new TimelineMax({delay: 3});
-    var welcomeText = new TimelineMax({delay: 3});
+    var welcome = new TimelineMax({ delay: 3 });
+    var welcomeText = new TimelineMax({ delay: 3 });
     welcome.timeScale(1);
     welcomeText.timeScale(1);
 
     welcome.add(TweenLite.to('#office', 1.2, {
         scale: elevatorScale,
         transformOrigin: '50% 50%',
-        force3D:true
+        force3D: true
     }), "officeZoomWithElevator");
 
     welcome.add(TweenLite.to('#loaderElevator', 0.7, {
         scale: elevatorScale + 0.2,
         transformOrigin: '50% 50%',
-        onComplete: function(){
+        onComplete: function() {
             $('#loaderElevator').hide();
         }
     }), "elevatorZoom");
 
     welcome.add(TweenLite.to($('#office'), 0.4, {
-            scale: scale,
-            delay: 0.1,
-            ease: SlowMo.ease.config(0.2, 0.2, false),
-            transformOrigin: '50% 50%'
-        }), "sitDownToTable");
+        scale: scale,
+        delay: 0.1,
+        ease: SlowMo.ease.config(0.2, 0.2, false),
+        transformOrigin: '50% 50%'
+    }), "sitDownToTable");
 
     //ele, scale, initialDelay, timeScale, yoyo, revealInterval
     welcomeText.add(showTextTyping($('#hydMsg'), scale, 0, 0.7, true, 0.01));
-    welcomeText.add(showTextTyping($('#turnOnMsg'), scale, 0, 0.7, true, 0.01));
     welcomeText.add(showTextTyping($('#visionMsg'), scale, 0, 0.7, false, 0.01));
+    //welcomeText.add(showTextTyping($('#visionMsg'), scale, 0, 0.7, false, 0.01));
 
     welcome.add([TweenMax
         .fromTo($('.trapezoid'), 0.25, {
@@ -162,38 +199,42 @@ function initialAnimation(point) {
             opacity: 0.3,
             scale: 1,
             borderRadius: 0
-        }),TweenMax.to($('.trapezoid'), 0.15, {
+        }), TweenMax.to($('.trapezoid'), 0.15, {
             opacity: 1,
             ease: Power2.easeInOut
-        }), setRoomLight($('#officeroom, #chair'), 0.6, 0.1),
-        TweenMax.to($('#presentation-logo'), 0.1, {
-            autoAlpha: 1,
-            ease: Power2.easeInOut
-        })]);
-
+        })
+    ]);
+    /*
+    , setRoomLight($('#officeroom, #chair'), 0.6, 0.1),
+            TweenMax.to($('#presentation-logo'), 0.1, {
+                autoAlpha: 1,
+                ease: Power2.easeInOut
+            })
+                welcome.add(
+            TweenMax.to($('#presentation-logo'), 0.15, {
+                scale: 0,
+                ease: Back.easeInOut
+            }));
+    */
     welcome.add(
         TweenMax.to('#projector', 0.1, {
             opacity: 1,
             delay: 0
         }));
 
-    welcome.add(
-        TweenMax.to($('#presentation-logo'), 0.15, {
-            scale: 0,
-            ease: Back.easeInOut
-        }));
-    welcome.add(function(){
+
+    welcome.add(function() {
         $('.vision2020').addClass('active');
     });
     welcome.add(TweenMax.staggerFromTo($('#presentationMenu li'), 1.2, {
-            scale: 0,
-            borderRadius: 100
-        }, {
-            opacity: 1,
-            scale: 0.8,
-            borderRadius: 0,
-            ease: Power2.easeInOut
-        }, 0.3));
+        scale: 0,
+        borderRadius: 100
+    }, {
+        opacity: 1,
+        scale: 0.8,
+        borderRadius: 0,
+        ease: Power2.easeInOut
+    }, 0.3));
 
 
 
@@ -257,7 +298,7 @@ function setScreen() {
     });
     $('#office').css({ height: $('#officeroom').height() });
     TweenLite.set('#hall', { scale: currentScale });
-    TweenLite.set('#screenTable', { rotationX: 90 });
+    TweenLite.set('#screenTable', { rotationX: 90, transformStyle: "preserve-3d" });
 
     return {
         x: perspectiveOriginX,
