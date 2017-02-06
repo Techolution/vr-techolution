@@ -318,10 +318,21 @@
     position: relative;
     overflow: hidden;
 }
-
+.hide-1050{
+  display: block;
+}
+.show-1050{
+  display: none;
+}
 @media all and (max-width: 1050px) {
     .centerwall-inner .button-panel {
         width: 100px;
+    }
+    .hide-1050{
+      display: none;
+    }
+    .show-1050{
+      display: block;
     }
     .panel-box {
       margin-top: 60px;
@@ -401,7 +412,18 @@ min-width: 90px;
     background-repeat: no-repeat;
     margin: 15px 0;
 }
-
+.logo-svg-mob{
+  background-image: url(../img/logo%20icon-01.svg);
+  background-repeat: no-repeat;
+  height: 40px;
+  background-position: center center;
+}
+.mob-text {
+    margin-bottom: 15px;
+    position: relative;
+    margin-top: -8px;
+    text-align: center;
+}
 @keyframes openElevator {
     0% {
         transform: scale(1);
@@ -451,6 +473,9 @@ min-width: 90px;
     .techo-box{
       font-size: 7px;
     }
+    .mob-text {
+    font-size: 5px;
+}
 }
 
 @media all and (max-height: 600px) {
@@ -474,6 +499,9 @@ min-width: 90px;
         -o-transform: perspective(100vw) rotateY(-75deg) translateZ(-20vw);
         -moz-transform: perspective(100vw) rotateY(-75deg) translateZ(-20vw);
         -webkit-transform: perspective(100vw) rotateY(-75deg) translateZ(-20vw);
+    }
+    .panel-box{
+      margin-top: 20px;
     }
     .topwall,
     .bottomwall {
