@@ -20,7 +20,7 @@ body{
 	}
 
 	.tiles:hover {
-		box-shadow: -1px 10px 10px rgb(0,139,139);
+		box-shadow: -1px 3px 3px rgb(0,139,139);
 	}
 
 	.techo-tile{
@@ -105,6 +105,8 @@ body{
 	margin: 0 auto;
     margin-top: -50px;
     width: 70%;
+    position: relative;
+    z-index: 2;
 }
 
 .rect{
@@ -133,6 +135,7 @@ body{
     margin: 5px 8px;
     border-radius: 2px;
     float: left;
+    cursor: pointer;
 }
 
 .service:last-child {
@@ -162,14 +165,17 @@ body{
 .short-message{
 	margin: 0 auto;
 	text-align: center;
-	padding: 5px;
+	padding: 15px 5px 0px;
 	font-size: 9px;
 
 }
 
 .high-light{
 	color: #07939F;
+}
 
+.high-light a{
+	    text-decoration: none;
 }
 .connector{
 	width: 45px;
@@ -206,4 +212,9 @@ body{
 	-ms-transform: rotate(5deg);
 	-webkit-transform: rotate(5deg);
 	transform: rotate(-3deg);
+}
+
+.pivotal{
+	width: 35px;
+	fill: #07939F;
 }
