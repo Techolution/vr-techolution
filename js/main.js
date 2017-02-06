@@ -90,9 +90,9 @@ function activateScreenTable() {
         $('.data-container > .active').removeClass('active');
         $('.PeopleData').addClass('active');
     });
-    $('#presentationMenu').on('click', '#settings', function() {
+    $('#presentationMenu').on('click', '#settings, #logo', function() {
         $('#presentationMenu li a.active').removeClass('active');
-        $(this).addClass('active');
+        $('#settings').addClass('active');
 
         $('.data-container > .active').removeClass('active');
         $('.vision2020').addClass('active');
