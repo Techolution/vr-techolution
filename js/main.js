@@ -309,7 +309,7 @@ function setScreen() {
     var top, left, height, width, sideBuffer, perspectiveOriginX, perspectiveOriginY, currentScale;
 
     //save current scale
-    currentScale = $('#hall')[0]._gsTransform ? getScale() : 1;
+    currentScale = $('#hall')[0]._gsTransform ? $('#hall')[0]._gsTransform : 1;
 
     //reset scale for calculation
     TweenLite.set('#hall', { scale: 1, perspective: 10000 });
