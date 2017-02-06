@@ -1,91 +1,94 @@
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation:portrait) {
-	#officeroom{
-		display: none;
-	}
-	body{
-		position: fixed;
-	}
-	#brandingWrapper {
+    #officeroom{
+        display: none;
+    }
+    body{
+        position: fixed;
+    }
+    #brandingWrapper {
     position: absolute;
     z-index: 650;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     height: 40px;
     width: 100%;
-	}
-	#screen {
+    }
+    #screen {
     width: 100%;
     height: 100%;
     z-index: 4000;
     position: absolute;
     top: 0px;
     left: 0px;
-	}
-	#brandingWrapper > #logo img {
+    }
+    #brandingWrapper > #logo img {
     display: block;
     height: auto;
     margin: 0 auto;
     width: 33.3vw;
     top: 4px;
     position: relative;
-	}
-	#logo {
+    }
+    #logo {
     position: absolute;
     left: 10px;
     top: 15px;
     transform: translateY(-50%);
     z-index: 1;
-	}
-	#logo:after {
-    content: ' ';	
-	}
-	#chair {
+    }
+    #logo:after {
+    content: ' ';   
+    }
+    #chair {
     z-index: 5000;
     pointer-events: none;
     -moz-transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-    transform: scale(4.1);
-    bottom: 50px;
+    /* -webkit-transform: scale(1.1); */
+    /* transform: scale(4.1); */
+    bottom: 0px;
     top: auto;
-	}
-	.trapezoid {
+    width: 100%;
+    /* margin: 0px auto; */
+ }
+    .trapezoid {
     background-image: url(../img/table.png);
     /* background-size: 100%; */
     height: 54.3px;
-    left: 79px;
+    left: 68px;
     position: absolute;
-    width: 217px;
+    width: 179px;
     z-index: 9930;
     opacity: 1;
-    transform-origin: 50% 0px 0px;
-    transform: matrix3d(1, 0, 0, 0, 0, 0, 1, 0, 0, -1, 0, 0, 0, 0, 0, 1);
-    bottom: 0;
-	}
-	div#projector{
-		opacity: 1;
-	}
-	#presentationMenu li a img {
-    width: 17px;
-    padding-top: 2px;
+    transform-origin: 47% 0px 0px;
+    transform: matrix3d(1, 0, 0, 0, 0, 0, 1, 0, 0, -1, 2, 4, 0, -1, 0, 1);
+    bottom: 59px;
+    right: 0;
+ }
+    div#projector{
+        opacity: 1;
+    }
+    #presentationMenu li a img {
+    width: 28px;
+    padding-top: 6px;
     display: block;
     margin: auto;
-	}
-	.v-h-center {
+ }
+    .v-h-center {
     position: absolute;
     top: 23px;
     left: 0;
     width: 100%;
     transform: translate(0%, 0%);
-	}
-	.services-container {
+    }
+    .services-container {
     margin: 0 auto;
     margin-top: -50px;
     width: 100%;
-	}
-	.middle_logo{
-		display: none;
-	}
-	.social_block {
+    }
+    .middle_logo{
+        display: none;
+    }
+    .social_block {
     /* font-size: 10px !Important; */
     color: #fff;
     font-size: 11px;
@@ -94,27 +97,27 @@
     /*margin-top: 4px;*/
     position: static;
  }
-	.supercool {
+    .supercool {
     font-size: 12px;
     margin: 0px;
     color: #99c546;
-	}
-	.designation {
+    }
+    .designation {
     /* font-size: 12px; */
     margin: 0px;
     color: #00808f;
     font-size: 14px;
     line-height: 24px;
     margin-bottom: 2px;
-	}
-	.name {
+    }
+    .name {
     font-size: 20px;
     margin: 0px;
     color: #2d2d2d;
     /* font-size: 0.6vw; */
     margin-bottom: 0px;
-	}
-	.box_people {
+    }
+    .box_people {
     width: 100%;
     height: auto;
     float: left;
@@ -123,42 +126,42 @@
     
     margin-top: 30px;
  }
-	.box_people.top{
-	position: static;
-	left: 0;
-	margin-left: 0px;
-	top: 50px;
-	margin-top: 80px;
-	/* padding-left: 16px; */
-	}
-	.box_people.left{
-		position: static;
-		left: 10px;
-		top: 0;
-		margin-top: 80px;
-	}
-	.box_people.right{
-		position: static;
-		right: 12px;
-		top: 0;
-		margin-top: 80px;
-	}
-	.box_people.bottom{
-		position: static;
-		left: 0;
-		margin-left: 0px;
-		margin-top: 80px;
-		bottom: 34px;
+    .box_people.top{
+    position: static;
+    left: 0;
+    margin-left: 0px;
+    top: 50px;
+    margin-top: 80px;
+    /* padding-left: 16px; */
+    }
+    .box_people.left{
+        position: static;
+        left: 10px;
+        top: 0;
+        margin-top: 80px;
+    }
+    .box_people.right{
+        position: static;
+        right: 12px;
+        top: 0;
+        margin-top: 80px;
+    }
+    .box_people.bottom{
+        position: static;
+        left: 0;
+        margin-left: 0px;
+        margin-top: 80px;
+        bottom: 34px;
         margin-bottom: 40px;
-	}
-	.people_picture{left: -31px;
+    }
+    .people_picture{left: -31px;
     top: 4px;
     position: static;
     margin-top: -30px;
-	}
-	#projector .data-container > .active{
-		overflow: scroll;
-	}
+    }
+    #projector .data-container > .active{
+        overflow: scroll;
+    }
     /*mansur's css*/
     .people_container{
         padding: 0 15%;
@@ -180,6 +183,12 @@
         width: 50px;
         cursor: pointer;
         font-size: 30px;
+    }
+    .desktop{
+        display: none;
+    }
+    #presentationMenu li{
+        opacity: 0;
     }
     
 }
