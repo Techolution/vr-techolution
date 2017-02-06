@@ -102,7 +102,7 @@
         var ovrl = id("loaderElevator"),
         stat = id("currentFloor"),
         leftDoor = id("leftDoor"),
-        loadingTechoMsg = id("loadingTechoMsg"),
+        //loadingTechoMsg = id("loadingTechoMsg"),
         rightDoor = id("rightDoor");
         // img = document.images,
         // c = 0;
@@ -140,7 +140,7 @@
 			ovrl.className += ' active';
 			leftDoor.className += ' active';
 			rightDoor.className += ' active';
-      loadingTechoMsg.className += ' active';
+      //loadingTechoMsg.className += ' active';
 		  }, 500);
 		  setTimeout(function(){
 			ovrl.style.display = "none";
