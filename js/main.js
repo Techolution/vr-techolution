@@ -264,3 +264,28 @@ function setScreen() {
         y: perspectiveOriginY
     };
 }
+
+// mansur's JS
+
+function showAgilePassBigDataContent(service){
+    var data = "";
+    if(service === 'agile'){
+        data = "some agile information";
+    }else if(service === 'pass'){
+        data = "some pass information";
+    }else if(service === 'bigdata'){
+        data = "some bigdata information";
+    }
+
+    document.getElementById("m-vision-div").style.display = "none";
+    document.getElementById("agilePassBigDataContainer").style.display = "block";
+    document.getElementById("m-content").innerHTML = data;
+}
+
+function hideAgilePassBigDataContent(){
+    document.getElementById("m-vision-div").style.display = "block";
+    document.getElementById("agilePassBigDataContainer").style.display = "none";
+}
+
+
+
