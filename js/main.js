@@ -83,6 +83,12 @@ function getCenterWallScale() {
 }
 
 function activateScreenTable() {
+    $('#presentationMenu li').on('mouseenter', function(){
+        TweenLite.to(this, .1, {z: 5});
+    });
+    $('#presentationMenu li').on('mouseleave', function(){
+        TweenLite.to(this, .1, {z: 0});
+    });
     $('#presentationMenu').on('click', '#team', function() {
         $('#presentationMenu li a.active').removeClass('active');
         $(this).addClass('active');
