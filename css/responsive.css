@@ -161,6 +161,7 @@
     }
     #projector .data-container > .active{
         overflow: scroll;
+        padding-bottom: 100px;
     }
     /*mansur's css*/
     .people_container{
@@ -195,3 +196,36 @@
     }
     
 }
+@media only screen and (min-device-width: 375px) {
+    .trapezoid {
+    background-image: url(../img/table.png);
+    /* background-size: 100%; */
+    height: 54.3px;
+    left: 74px;
+    position: absolute;
+    width: 220px;
+    z-index: 9930;
+    opacity: 1;
+    transform-origin: 47% 0px 0px;
+    transform: matrix3d(1, 0, 0, 0, 0, 0, 1, 0, 0, -1, 2, 4, 0, -1, 0, 1);
+    bottom: 78px;
+    right: 0;
+}
+}
+@media only screen and (min-device-width: 414px) {
+    .trapezoid {
+    background-image: url(../img/table.png);
+    /* background-size: 100%; */
+    height: 48.3px;
+    left: 80px;
+    position: absolute;
+    width: 244px;
+    z-index: 9930;
+    opacity: 1;
+    transform-origin: 47% 0px 0px;
+    transform: matrix3d(1, 0, 0, 0, 0, 0, 1, 0, 0, -1, 2, 4, 0, -1, 0, 1);
+    bottom: 88px;
+    right: 0;
+}
+}
+
