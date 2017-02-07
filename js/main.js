@@ -1,5 +1,5 @@
 window.onload = function() {   
-    if(!window.matchMedia( "(min-width: 480px)" )){
+    if(window.innerWidth >480){
     var coOrdinates = initScene();
     initialAnimation(coOrdinates);
     activateScreenTable();
@@ -13,7 +13,7 @@ else{
 
 };
 
-//window.onresize = setScreen;
+window.onresize = setScreen;
 function initialAnimationMobile(){
     var storyAnime = new TimelineMax();
     var welcome = new TimelineMax({delay: 4});
@@ -23,18 +23,11 @@ function initialAnimationMobile(){
     // welcomeText.add(showTextTyping($('#turnOnMsg'), scale, 0, 0.7, true, 0.01));
     // welcomeText.add(showTextTyping($('#visionMsg'), scale, 0, 0.7, false, 0.01));
 
-   welcome.add(function() {
-        $('#screen').height('100%');
-    });
+   
 
     welcome.add(
         TweenMax.to('#projector', 0.1, {
             opacity: 1,
-            delay: 0
-        }));
-    welcome.add(
-        TweenMax.to('#loaderElevator', 0.1, {
-            display: 'none',
             delay: 0
         }));
 
@@ -45,6 +38,9 @@ function initialAnimationMobile(){
         }));
     welcome.add(function(){
         $('.vision2020').addClass('active');
+    });
+    welcome.add(function(){
+        $('#screen').height('100%');
     });
     welcome.add(TweenMax.staggerFromTo($('#presentationMenu li'), 1.2, {
             scale: 0,
@@ -58,7 +54,7 @@ function initialAnimationMobile(){
 }
 function initScene() {
     console.log("windowsize", window.innerWidth);
-    if (!window.matchMedia( "(min-width: 480px)" )) {
+    if (window.innerWidth > 480) {
         var init = setScreen();
         $('.blinker-arrow').hide();
         TweenLite.set($('#hall'), { scale: getElevatorScale(), transformOrigin: '50% 50%' });
@@ -277,7 +273,6 @@ function initialAnimation(point) {
     welcome.add(function() {
         $('.vision2020').addClass('active');
     });
-     
     welcome.add(TweenMax.staggerFromTo($('#presentationMenu li'), 1.2, {
         scale: 0,
         borderRadius: 100
