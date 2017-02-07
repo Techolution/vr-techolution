@@ -22,7 +22,7 @@
     transform: translate(-50%, -65%);
     left: 50%;
     top: 50%;
-    background: rgba(255,255,255,.85);
+    background: rgba(255,255,255,.6);
     border-radius: 5px;
     width: 100%;
 }
@@ -47,7 +47,10 @@
     list-style: none;
 }
 .loc-data ul li {
-    margin-bottom: 5px;
+    margin-bottom: 15px;
+}
+.loc-data ul li:last-child {
+    margin-bottom: 0px;
 }
 .glocation{
 }
@@ -82,6 +85,7 @@ div#singapore {
 }
 .mail a {
     background: no-repeat url(../img/mail.svg) top left;
+    line-height: 13px;
 }
 .phone a {
     background: no-repeat url(../img/Call.svg) top left;
