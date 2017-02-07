@@ -181,7 +181,11 @@
     }
     /*mansur's css*/
     .people_container {
-        padding: 0 15%;
+        padding: 15%;
+        overflow: scroll;
+        height: 90%;
+        top: 10%;
+        position: relative;
     }
     .people_picture {
         width: 100px;
