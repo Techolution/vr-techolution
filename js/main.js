@@ -13,7 +13,7 @@ else{
 
 };
 
-window.onresize = setScreen;
+//window.onresize = setScreen;
 function initialAnimationMobile(){
     var storyAnime = new TimelineMax();
     var welcome = new TimelineMax({delay: 4});
