@@ -1,40 +1,43 @@
-window.onload = function() {   
-    if(window.innerWidth >480){
-    var coOrdinates = initScene();
-    initialAnimation(coOrdinates);
-    activateScreenTable();
-}
-else{
-    initialAnimationMobile();
-    activateScreenTable();
-    var welcome = new TimelineMax({delay: 4});
-    var userAgent = navigator.userAgent.toLowerCase(); 
-        if (userAgent .indexOf('safari')!=-1){ 
-           if(userAgent .indexOf('chrome')  > -1){
-             //browser is chrome
-           }else if((userAgent .indexOf('opera')  > -1)||(userAgent .indexOf('opr')  > -1)){
-             //browser is opera 
-           }else{
-            welcome.add(function(){
-                $('body').addClass('safari');
-            });
-           }
+window.onload = function() {
+    if (window.innerWidth > 480) {
+        var coOrdinates = initScene();
+        initialAnimation(coOrdinates);
+        activateScreenTable();
+    } else {
+        initialAnimationMobile();
+        activateScreenTable();
+        var welcome = new TimelineMax({ delay: 4 });
+        var userAgent = navigator.userAgent.toLowerCase();
+        if (userAgent.indexOf('safari') != -1) {
+            if (userAgent.indexOf('chrome') > -1) {
+                //browser is chrome
+            } else if ((userAgent.indexOf('opera') > -1) || (userAgent.indexOf('opr') > -1)) {
+                //browser is opera 
+            } else {
+                welcome.add(function() {
+                    $('body').addClass('safari');
+                });
+            }
         }
-    
-}
+
+    }
 
 };
-window.onresize = setScreen;
-function initialAnimationMobile(){
+
+window.onresize = function() {
+    window.location.reload();
+};
+
+function initialAnimationMobile() {
     var storyAnime = new TimelineMax();
-    var welcome = new TimelineMax({delay: 4});
-    var welcomeText = new TimelineMax({delay: 4});
+    var welcome = new TimelineMax({ delay: 4 });
+    var welcomeText = new TimelineMax({ delay: 4 });
     // var scale = getScale();
     //  welcomeText.add(showTextTyping($('#hydMsg'), scale, 0, 0.7, true, 0.01));
     // welcomeText.add(showTextTyping($('#turnOnMsg'), scale, 0, 0.7, true, 0.01));
     // welcomeText.add(showTextTyping($('#visionMsg'), scale, 0, 0.7, false, 0.01));
 
-   
+
 
     welcome.add(
         TweenMax.to('#projector', 0.1, {
@@ -47,22 +50,23 @@ function initialAnimationMobile(){
             scale: 0,
             ease: Back.easeInOut
         }));
-    welcome.add(function(){
+    welcome.add(function() {
         $('.vision2020').addClass('active');
     });
-    welcome.add(function(){
+    welcome.add(function() {
         $('#screen').height('100%');
     });
     welcome.add(TweenMax.staggerFromTo($('#presentationMenu li'), 1.2, {
-            scale: 0,
-            borderRadius: 100
-        }, {
-            opacity: 1,
-            scale: 0.8,
-            borderRadius: 0,
-            ease: Power2.easeInOut
-        }, 0.3));
+        scale: 0,
+        borderRadius: 100
+    }, {
+        opacity: 1,
+        scale: 0.8,
+        borderRadius: 0,
+        ease: Power2.easeInOut
+    }, 0.3));
 }
+
 function initScene() {
     console.log("windowsize", window.innerWidth);
     if (window.innerWidth > 480) {
@@ -97,11 +101,11 @@ function getCenterWallScale() {
 }
 
 function activateScreenTable() {
-    $('#presentationMenu li').on('mouseenter', function(){
-        TweenLite.to(this, .1, {z: 5});
+    $('#presentationMenu li').on('mouseenter', function() {
+        TweenLite.to(this, .1, { z: 5 });
     });
-    $('#presentationMenu li').on('mouseleave', function(){
-        TweenLite.to(this, .1, {z: 0});
+    $('#presentationMenu li').on('mouseleave', function() {
+        TweenLite.to(this, .1, { z: 0 });
     });
     $('#presentationMenu').on('click', '#team', function() {
         $('#presentationMenu li a.active').removeClass('active');
@@ -366,13 +370,13 @@ function setScreen() {
 
 // mansur's JS
 
-function showAgilePassBigDataContent(service){
+function showAgilePassBigDataContent(service) {
     var data = "";
-    if(service === 'agile'){
+    if (service === 'agile') {
         data = "some agile information";
-    }else if(service === 'pass'){
+    } else if (service === 'pass') {
         data = "some pass information";
-    }else if(service === 'bigdata'){
+    } else if (service === 'bigdata') {
         data = "some bigdata information";
     }
 
@@ -381,10 +385,7 @@ function showAgilePassBigDataContent(service){
     document.getElementById("m-content").innerHTML = data;
 }
 
-function hideAgilePassBigDataContent(){
+function hideAgilePassBigDataContent() {
     document.getElementById("m-vision-div").style.display = "block";
     document.getElementById("agilePassBigDataContainer").style.display = "none";
 }
-
-
-
