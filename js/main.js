@@ -33,9 +33,9 @@ function initialAnimationMobile() {
     var welcome = new TimelineMax({ delay: 4 });
     var welcomeText = new TimelineMax({ delay: 4 });
     // var scale = getScale();
-    //  welcomeText.add(showTextTyping($('#hydMsg'), scale, 0, 0.7, true, 0.01));
-    // welcomeText.add(showTextTyping($('#turnOnMsg'), scale, 0, 0.7, true, 0.01));
-    // welcomeText.add(showTextTyping($('#visionMsg'), scale, 0, 0.7, false, 0.01));
+    //  welcomeText.add(showTextTyping($('#hydMsg'), 1, 0, 0.7, true, 0.01));
+    // welcomeText.add(showTextTyping($('#turnOnMsg'), 1, 0, 0.7, true, 0.01));
+    //welcomeText.add(showTextTyping($('#visionMsg'), 1, 0, 0.7, false, 0.01));
 
 
 
@@ -101,27 +101,28 @@ function getCenterWallScale() {
 }
 
 function activateScreenTable() {
+
     $('#presentationMenu li').on('mouseenter', function() {
         TweenLite.to(this, .1, { z: 5 });
     });
     $('#presentationMenu li').on('mouseleave', function() {
         TweenLite.to(this, .1, { z: 0 });
     });
-    $('#presentationMenu').on('click', '#team', function() {
+    $('#presentationMenu #team').on('click touchstart', function() {
         $('#presentationMenu li a.active').removeClass('active');
         $(this).addClass('active');
 
         $('.data-container > .active').removeClass('active');
         $('.PeopleData').addClass('active');
     });
-    $('#presentationMenu').on('click', '#settings, #logo', function() {
+    $('#presentationMenu #settings, #logo').on('click touchstart', function() {
         $('#presentationMenu li a.active').removeClass('active');
         $('#settings').addClass('active');
 
         $('.data-container > .active').removeClass('active');
         $('.vision2020').addClass('active');
     });
-    $('#presentationMenu').on('click', '#location', function() {
+    $('#presentationMenu #location').on('click touchstart', function() {
         $('#presentationMenu li a.active').removeClass('active');
         $(this).addClass('active');
 
@@ -137,25 +138,26 @@ function activateScreenTable() {
 function activateMapLocations() {
     //hyd, nyc, mu, singapore
     //india, ny, africa, sng
-    $('#mapmenu').on('click', '#ny', function() {
+    //TweenLite.to('#mapmenu > a', 0.1, { z: 2 });
+    $('#mapmenu #ny').on('click touchstart', function() {
         $('#mapmenu .active').removeClass('active');
         $(this).addClass('active');
         $('.contactUsData > .active').removeClass('active');
         $('.contactUsData #nyc').addClass('active');
     });
-    $('#mapmenu').on('click', '#india', function() {
+    $('#mapmenu #india').on('click touchstart', function() {
         $('#mapmenu .active').removeClass('active');
         $(this).addClass('active');
         $('.contactUsData > .active').removeClass('active');
         $('.contactUsData #hyd').addClass('active');
     });
-    $('#mapmenu').on('click', '#africa', function() {
+    $('#mapmenu #africa').on('click touchstart', function() {
         $('#mapmenu .active').removeClass('active');
         $(this).addClass('active');
         $('.contactUsData > .active').removeClass('active');
         $('.contactUsData #mu').addClass('active');
     });
-    $('#mapmenu').on('click', '#sng', function() {
+    $('#mapmenu #sng').on('click touchstart', function() {
         $('#mapmenu .active').removeClass('active');
         $(this).addClass('active');
         $('.contactUsData > .active').removeClass('active');
@@ -163,7 +165,7 @@ function activateMapLocations() {
     });
 
     /*backbutton*/
-    $('#mapmenu').on('click', '#back', function() {
+    $('#mapmenu #back').on('click touchstart', function() {
         $('#mapmenu').hide();
         $('#presentationMenu').show();
     });
