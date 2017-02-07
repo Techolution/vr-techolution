@@ -12,7 +12,7 @@ window.onload = function() {
             if (userAgent.indexOf('chrome') > -1) {
                 //browser is chrome
             } else if ((userAgent.indexOf('opera') > -1) || (userAgent.indexOf('opr') > -1)) {
-                //browser is opera 
+                //browser is opera
             } else {
                 welcome.add(function() {
                     $('body').addClass('safari');
@@ -373,11 +373,11 @@ function setScreen() {
 function showAgilePassBigDataContent(service) {
     var data = "";
     if (service === 'agile') {
-        data = "some agile information";
+        data = "To learn more about our expert consulting services & project development please reach out to <a href='mailto:consulting@techolution.com'>consulting@techolution.com</a>.";
     } else if (service === 'pass') {
-        data = "some pass information";
+        data = "To learn more about our expert consulting services & project development please reach out to <a href='mailto:consulting@techolution.com'>consulting@techolution.com</a>.";
     } else if (service === 'bigdata') {
-        data = "some bigdata information";
+        data = "To learn more about our expert consulting services & project development please reach out to <a href='mailto:consulting@techolution.com'>consulting@techolution.com</a>.";
     }
 
     document.getElementById("m-vision-div").style.display = "none";
