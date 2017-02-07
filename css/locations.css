@@ -122,10 +122,34 @@ div#singapore {
     display: inline-block;
     margin-right: 5px;
 }
-.show-767{ display: none;}
-  .hide-767{ display: block;}
+.show-767{display: none !important;}
+  .hide-767{ display: block !important;}
 
   @@media all and (max-width : 767px) {
-    .show-767{ display: block;}
-      .hide-767{ display: none;}
+    .show-767{ display: block !important;}
+      .hide-767{ display: none !important;}
+      .location-data-wrapper h2 {
+    margin-bottom: 20px;
+}
+.location-left-box {
+    width: 100%;
+    margin-bottom: 15px;
+}
+.loc-img {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+}
+.loc-data {
+    width: 100%;
+}
+.loc-data ul li {
+    margin-bottom: 10px;
+}
+.location-right-box {
+    width: 100%;
+}
+.follow-box {
+    margin-top: 0;
+}
   }
