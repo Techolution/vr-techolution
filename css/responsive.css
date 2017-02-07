@@ -12,6 +12,12 @@
     left: 0;
     height: 13vw;
     width: 100%;
+    transform: translateZ(0);
+    -moz-transform: translatez(0);
+    -ms-transform: translatez(0);
+    -o-transform: translatez(0);
+    -webkit-transform: translateZ(0);
+    -webkit-font-smoothing: antialiased;
     }
     #screen {
     width: 100%;
