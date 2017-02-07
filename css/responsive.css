@@ -3,7 +3,7 @@
         display: none;
     }
     body{
-        position: fixed;
+     position: fixed;
     }
     #brandingWrapper {
     position: fixed;
@@ -13,10 +13,10 @@
     height: 13vw;
     width: 100%;
     transform: translateZ(0);
-    -moz-transform: translatez(0);
-    -ms-transform: translatez(0);
-    -o-transform: translatez(0);
-    -webkit-transform: translateZ(0);
+    -moz-transform: translatez(0px);
+    -ms-transform: translatez(0px);
+    -o-transform: translatez(0px);
+    -webkit-transform: translateZ(0px);
     -webkit-font-smoothing: antialiased;
     margin-top: -5px;
     }
@@ -212,3 +212,8 @@
 }
 }
 
+@media screen and (-webkit-min-device-pixel-ratio:0) and (max-width:480px){ /* Safari only override */ 
+    body{
+        padding: 30px;
+    }
+     } 
