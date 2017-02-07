@@ -125,7 +125,7 @@ div#singapore {
 .show-767{display: none !important;}
   .hide-767{ display: block !important;}
 
-  @@media all and (max-width : 767px) {
+@media all and (max-width: 767px) {
     .show-767{ display: block !important;}
       .hide-767{ display: none !important;}
       .location-data-wrapper h2 {
@@ -151,5 +151,8 @@ div#singapore {
 }
 .follow-box {
     margin-top: 0;
+}
+.contactUsData > div {
+    background: none !important;
 }
   }
