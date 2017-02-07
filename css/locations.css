@@ -121,3 +121,11 @@ div#singapore {
 .follow-links li {
     display: inline-block;
     margin-right: 5px;
+}
+.show-767{ display: none;}
+  .hide-767{ display: block;}
+
+  @@media all and (max-width : 767px) {
+    .show-767{ display: block;}
+      .hide-767{ display: none;}
+  }
