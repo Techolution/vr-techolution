@@ -8,6 +8,7 @@
     right: 0;
     top: 46px;
     bottom: 0;
+    transition: all 1.3s ease 0s;
 }
 .contactUsData > div.active {
     opacity: 1;
@@ -31,7 +32,7 @@
     text-align: center;
 }
 .location-info-container{float: left;width: 100%;position: relative;}
-.location-left-box{float: left;position: relative;width: 70%;}
+.location-left-box{float: left;position: relative;width: 75%;}
 .loc-img{float: left;width: 70px;margin-right: 10px;}
 .loc-data{font-size: 8px;float: left;}
 .loc-data a {
@@ -54,7 +55,7 @@
 }
 .phone{
 }
-.location-right-box{float: left;width: 30%;position: relative;}
+.location-right-box{float: left;width: 25%;position: relative;}
 .follow-box{font-size: 8px;margin-top: 38px;}
 .follow-links{margin: 5px 0 0 0;padding: 0;list-style: none;display: block;}
 .twitter{
