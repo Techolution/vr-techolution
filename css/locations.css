@@ -59,7 +59,7 @@
 .phone{
 }
 .location-right-box{float: left;width: 25%;position: relative;}
-.follow-box{font-size: 8px;margin-top: 61px;}
+.follow-box{font-size: 12px;margin-top: 61px;}
 .follow-links{margin: 5px 0 0 0;padding: 0;list-style: none;display: block;}
 .twitter{
 }
@@ -81,7 +81,7 @@ div#singapore {
 }
 .glocation a {
     background: no-repeat url(../img/map-pin.svg) top left;
-    background-size: 12px 12px;
+    background-size: 15px 15px;
 }
 .mail a {
     background: no-repeat url(../img/mail.svg) top left;
@@ -103,7 +103,7 @@ div#singapore {
         width: 12px;
         text-align: center;
         border-radius: 50%;
-        padding-top: 2px;
+        padding-top: 6px;
         box-shadow: 1px 1px 3px 0px rgba(0,0,0,.3);
         color: rgb(0,127,142);
     }
@@ -142,6 +142,10 @@ div#singapore {
 }
 .loc-data {
     width: 100%;
+    font-size: 12px;
+}
+.loc-data a {
+    padding-left: 22px;
 }
 .loc-data ul li {
     margin-bottom: 10px;
@@ -154,5 +158,11 @@ div#singapore {
 }
 .contactUsData > div {
     background: none !important;
+}
+.follow-links li a {
+    height: 25px;
+    width: 25px;
+    padding-top: 6px;
+
 }
   }
