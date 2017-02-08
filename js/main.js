@@ -371,15 +371,21 @@ function setScreen() {
 }
 
 // mansur's JS
+var commonDataVision = "To learn more about our expert consulting services & project development please reach out to <a href='mailto:consulting@techolution.com'>consulting@techolution.com</a>.";
 
+$('.info-graphic-tile').click(function(){
+  $('#m-vision-div').hide();
+  $('#m-content').html(commonDataVision);
+  $('#agilePassBigDataContainer').show();
+});
 function showAgilePassBigDataContent(service) {
     var data = "";
     if (service === 'agile') {
-        data = "To learn more about our expert consulting services & project development please reach out to <a href='mailto:consulting@techolution.com'>consulting@techolution.com</a>.";
+        data = commonDataVision;
     } else if (service === 'pass') {
-        data = "To learn more about our expert consulting services & project development please reach out to <a href='mailto:consulting@techolution.com'>consulting@techolution.com</a>.";
+        data = commonDataVision;
     } else if (service === 'bigdata') {
-        data = "To learn more about our expert consulting services & project development please reach out to <a href='mailto:consulting@techolution.com'>consulting@techolution.com</a>.";
+        data = commonDataVision;
     }
 
     document.getElementById("m-vision-div").style.display = "none";
