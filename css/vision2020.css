@@ -21,6 +21,9 @@ body{
 .social_block a{
 	color: white;
 }
+div#agilePassBigDataContent a {
+    color: #07939F;
+}
 	.tiles:hover {
 		box-shadow: -1px 3px 3px rgb(0,139,139);
 	}
@@ -224,17 +227,18 @@ body{
 #agilePassBigDataContainer{
     display: none;
     height: 190px;
-    width: 182px;
 }
 
 
 
 #agilePassBigDataContainer #agilePassBigDataContent{
     position: relative;
-    top: 70px;
-    border-bottom: 1px solid #99C546;
+    border-bottom: 1px solid #07939F;
     padding-bottom: 10px;
     font-size: 9px;
+    padding: 10px 10px 40px;
+    background: rgba(255,255,255,.6);
+    border-radius: 6px;
 }
 
 
@@ -243,9 +247,9 @@ body{
     position: absolute;
     bottom: -15px;
     font-size: 8px;
-    background-color: #99C546;
+    background-color: #07939F;
     border: 0px;
     left: 40%;
     border-radius: 0 0 5px 5px;
-
+    color: #fff;
 }
