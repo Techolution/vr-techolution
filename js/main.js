@@ -397,6 +397,3 @@ function hideAgilePassBigDataContent() {
     document.getElementById("m-vision-div").style.display = "block";
     document.getElementById("agilePassBigDataContainer").style.display = "none";
 }
-(function(){
-    console.log('dev-server');
-})();
