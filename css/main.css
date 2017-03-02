@@ -278,7 +278,7 @@ div#projector {
 }
 
 .trapezoid {
-    background-image: linear-gradient(90deg, rgba(100, 119, 100, 0.9) 0px, rgba(100, 119, 100, 0.9) 1%, rgba(0, 0, 0, 1) 100%);
+    //background-image: linear-gradient(90deg, rgba(100, 119, 100, 0.9) 0px, rgba(100, 119, 100, 0.9) 1%, rgba(0**, 0, 0, 1) 100%);
     background-image: url(../img/table.png);
     background-size: 100%;
     height: 48.3px;
@@ -301,7 +301,7 @@ div#projector {
 }
 
 #presentationMenu li {
-    background-color: rgba(0, 0, 0, 0.3);
+    /*background-color: rgba(0, 0, 0, 0.3);*/
     color: #fff;
     display: table-cell;
     font-size: 30px;
@@ -379,7 +379,7 @@ div#projector {
     overflow: hidden;
     padding: 10px;
     opacity: 1;
-    transform: scale(1);
+    /*transform: scale(1);*/
     visibility: visible;
     width: 100%;
     z-index: 1;
@@ -428,14 +428,14 @@ body {
     #maplocations a:hover {
         border: 1px solid rgb(250, 250, 214);
         background: #07939f;
-        transform: scale(1.2);
+        /*transform: scale(1.2);*/
     }
 }
 
 #maplocations a.active {
     border: 1px solid rgb(250, 250, 214);
     background: #07939f;
-    transform: scale(1.2);
+    /*transform: scale(1.2);*/
 }
 
 #maplocations #india {
