@@ -530,3 +530,6 @@ body #maplocations > a:hover > span {
 .mobile {
     display: none;
 }
+.short-message img {
+    width: 35px;
+}
