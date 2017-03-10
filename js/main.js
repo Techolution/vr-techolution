@@ -29,6 +29,7 @@ window.onresize = function() {
 };
 
 function initialAnimationMobile() {
+  alert('mobile');
     var storyAnime = new TimelineMax();
     var welcome = new TimelineMax({ delay: 4 });
     var welcomeText = new TimelineMax({ delay: 4 });
@@ -53,9 +54,9 @@ function initialAnimationMobile() {
     welcome.add(function() {
         $('.vision2020').addClass('active');
     });
-    // welcome.add(function() {
-    //     $('#screen').height('100%');
-    // });
+    welcome.add(function() {
+        $('#screen').height('100%');
+    });
     welcome.add(TweenMax.staggerFromTo($('#presentationMenu li'), 1.2, {
         scale: 0,
         borderRadius: 100
