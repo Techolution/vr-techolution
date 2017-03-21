@@ -29,7 +29,7 @@ window.onresize = function() {
 };
 
 function initialAnimationMobile() {
-  alert('mobile');
+  //alert('mobile');
     var storyAnime = new TimelineMax();
     var welcome = new TimelineMax({ delay: 4 });
     var welcomeText = new TimelineMax({ delay: 4 });
