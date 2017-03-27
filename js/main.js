@@ -29,7 +29,7 @@ window.onresize = function() {
 };
 
 function initialAnimationMobile() {
-  //alert('mobile');
+    //alert('mobile');
     var storyAnime = new TimelineMax();
     var welcome = new TimelineMax({ delay: 4 });
     var welcomeText = new TimelineMax({ delay: 4 });
@@ -374,11 +374,12 @@ function setScreen() {
 // mansur's JS
 var commonDataVision = "To learn more about our expert consulting services & project development please reach out to <a href='mailto:consulting@techolution.com'>consulting@techolution.com</a>.";
 
-$('.info-graphic-tile').click(function(){
-  $('#m-vision-div').hide();
-  $('#m-content').html(commonDataVision);
-  $('#agilePassBigDataContainer').show();
+$('.info-graphic-tile').click(function() {
+    $('#m-vision-div').hide();
+    $('#m-content').html(commonDataVision);
+    $('#agilePassBigDataContainer').show();
 });
+
 function showAgilePassBigDataContent(service) {
     var data = "";
     if (service === 'agile') {
