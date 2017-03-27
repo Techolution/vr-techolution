@@ -1,0 +1,290 @@
+body.desktop {
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    margin: 0 auto;
+    padding: 0;
+    height: 1036px;
+    overflow: auto;
+    max-width: 1500px;
+}
+
+.desktop #city.desktop-city {
+    background: no-repeat url('../img/nyc-0-rotate.jpg') left top / cover;
+    position: absolute;
+    left: 0;
+    top: 0px;
+    z-index: 0;
+    height: 1036px;
+    width: 1500px;
+    transform: none;
+    object-fit: initial;
+}
+
+.desktop div#office {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 1036px;
+    width: 1500px;
+    transform: none;
+    bottom: auto;
+    right: auto;
+}
+
+
+/*remove hall styling*/
+
+.desktop img#officeroom {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1500px;
+    height: auto;
+}
+
+.desktop div#screen {
+    position: absolute;
+    top: 180px;
+    left: 225px;
+    width: 1055px;
+    height: 722px;
+    z-index: 5000;
+}
+
+.desktop #brandingWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    z-index: 100;
+}
+
+.desktop #companymsg {
+    left: 145px;
+    height: auto;
+    top: 30px;
+    position: absolute;
+}
+
+.desktop #projector {
+    opacity: 1;
+}
+
+.desktop #brandingWrapper>#logo img {
+    width: 121px;
+}
+
+.desktop #presentationMenu li a img {
+    width: 60px;
+}
+
+.desktop #screenTable {
+    opacity: 1;
+    left: 504px;
+    position: absolute;
+    top: 827px;
+    width: 474px;
+    height: 85px;
+    transform: perspective(82px) rotateX(15deg);
+}
+
+.desktop #companymsg {
+    left: 145px;
+    height: 30px;
+    top: 7px;
+    position: absolute;
+    transform: none;
+    font-size: 16px;
+    width: calc(100% - 190px);
+}
+
+.desktop div#projector {
+    opacity: 1;
+    z-index: 99;
+}
+
+.desktop #brandingWrapper #companymsg p#visionMsg {
+    visibility: visible;
+    left: 28%;
+}
+
+.desktop .div {
+    padding: 0;
+    width: 100%;
+    margin: 0;
+}
+
+.desktop .tiles,
+.desktop .techo-tile {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.desktop #m-vision-div .svg-icon {
+    width: 50px;
+    height: auto;
+}
+
+.desktop .svg-icon-lable {
+    font-size: 10px;
+}
+
+.desktop .tiles-container {
+    max-width: 400px;
+    height: 400px;
+}
+
+.desktop .v-h-center {
+    top: 60px;
+    transform: none;
+    left: 0;
+    bottom: 0;
+}
+
+.desktop #m-vision-div #webMobile {
+    left: 0;
+}
+
+.desktop #m-vision-div #iot {
+    right: 0;
+    left: auto;
+    top: 0;
+}
+
+.desktop #m-vision-div #cloudTransformation {
+    left: 50%;
+    bottom: 0;
+    top: auto;
+    right: auto;
+    transform: translate(-50%, 0);
+}
+
+.desktop #m-vision-div .techo-tile {
+    left: 50%;
+    right: auto;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.desktop .connector_left {
+    margin: 0;
+    top: -42px;
+    height: 329px;
+    width: 120px;
+    transform: rotate(-45deg);
+    background-color: #99c546;
+    border-radius: 59px;
+    left: 63px;
+    box-shadow: 1px 9px 19px 1px #99c546;
+    opacity: .5;
+}
+
+.desktop .connector_right {
+    box-shadow: 1px 9px 19px 1px #99c546;
+    margin: 0;
+    top: -42px;
+    height: 329px;
+    width: 120px;
+    transform: rotate(45deg);
+    background-color: #99c546;
+    border-radius: 59px;
+    right: 63px;
+    opacity: .5;
+}
+
+.desktop .connector {
+    margin: 0;
+    height: 240px;
+    width: 120px;
+    background-color: #99c546;
+    border-radius: 59px;
+    left: 140px;
+    box-shadow: 1px 9px 19px 1px #99c546;
+    bottom: -10px;
+    opacity: .5;
+}
+
+.desktop .services-container {
+    margin: 40px auto 0;
+}
+
+.desktop .service-content {
+    float: left;
+    text-align: center;
+    color: #07939f;
+    width: calc(100% - 60px);
+}
+
+.desktop .rect {
+    height: 65px;
+}
+
+.desktop .services-container .service {
+    height: 55px;
+    width: 30%;
+}
+
+.desktop .services-container .service-logo {
+    width: 55px;
+    height: auto;
+}
+
+.desktop .service .service-content-h {
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.desktop .service .service-content-d {
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.desktop .arrow-right {
+    width: 0;
+    height: 0;
+    border-top: 33px solid transparent;
+    border-bottom: 33px solid transparent;
+    border-left: 33px solid #99c546;
+    float: left;
+}
+
+.desktop .short-message {
+    font-size: 16px;
+}
+
+.desktop .short-message img {
+    width: 50px;
+}
+
+.desktop .box_people {
+    width: 300px;
+    padding-bottom: 30px;
+}
+
+.desktop .box_people .name {
+    font-size: 17px;
+}
+
+.desktop .box_people .designation {
+    font-size: 13px;
+}
+
+.desktop .box_people .supercool {
+    font-size: 13px;
+}
+
+.desktop .box_people .social_block {
+    font-size: 15px;
+}
+
+.desktop #agilePassBigDataContent {
+    max-width: 400px;
+    margin: 0 auto;
+}
