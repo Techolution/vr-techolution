@@ -165,7 +165,7 @@ body.desktop {
     transform: translate(-50%, 0);
 }
 
-.desktop #m-vision-div .techo-tile {
+#m-vision-div .techo-tile {
     left: 50%;
     right: auto;
     top: 50%;

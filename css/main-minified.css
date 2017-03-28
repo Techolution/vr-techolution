@@ -1677,7 +1677,7 @@ div#agilePassBigDataContent a {
     border: 0;
     left: 46%;
     border-radius: 0 0 5px 5px;
-    color: #fff
+    color: #fff;
 }
 
 @media only screen and (min-width:320px) and (max-width:480px) {
@@ -1691,9 +1691,10 @@ div#agilePassBigDataContent a {
         position: fixed;
         z-index: 650;
         left: 0;
-        height: 13vw;
+        height: 70px;
         width: 100%;
-        margin-top: -5px
+        top: 0;
+        margin-top: 0;
     }
     #screen {
         width: 100%;
@@ -1704,11 +1705,16 @@ div#agilePassBigDataContent a {
         left: 0
     }
     body #logo {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translateY(-50%) translateX(-50%);
-        z-index: 1
+        position: relative;
+        left: auto;
+        top: auto;
+        transform: none;
+        z-index: 1;
+        text-align: center;
+        margin: 0 auto;
+        display: block;
+        float: none;
+        margin-top: 10px;
     }
     body.safari #brandingWrapper>#logo img {
         top: 15px
@@ -1717,9 +1723,9 @@ div#agilePassBigDataContent a {
         display: block;
         height: auto;
         margin: 0 auto;
-        width: 33.3vw;
-        top: 4px;
-        position: relative
+        width: 150px;
+        top: auto;
+        position: relative;
     }
     #logo {
         position: absolute;
@@ -1729,7 +1735,7 @@ div#agilePassBigDataContent a {
         z-index: 1
     }
     #logo:after {
-        content: ' '
+        content: ' ';
     }
     #chair {
         z-index: 5000;
@@ -1780,7 +1786,7 @@ div#agilePassBigDataContent a {
         font-size: 11px;
         padding-top: 10px;
         padding-bottom: 10px;
-        position: static
+        position: static;
     }
     .supercool {
         font-size: 12px;
@@ -1866,7 +1872,7 @@ div#agilePassBigDataContent a {
     .social_block i {
         width: 50px;
         cursor: pointer;
-        font-size: 30px
+        font-size: 21px;
     }
     .desktop,
     .desktop-city {
@@ -1884,15 +1890,19 @@ div#agilePassBigDataContent a {
         padding: 20px;
         width: 222px;
         margin-top: 120px;
-        transform: scale(1.5)
+        transform: scale(1.5);
     }
     #companymsg {
-        width: 99%;
-        position: absolute;
-        top: 80px;
+        width: 100%;
+        position: relative;
+        top: 0;
         left: 0;
         text-align: center;
-        font-size: 14px
+        font-size: 14px;
+        height: auto;
+        transform: none;
+        margin-top: 10px;
+        letter-spacing: 0px;
     }
     #visionMsg {
         display: block;
@@ -1970,5 +1980,46 @@ div#agilePassBigDataContent a {
         bottom: 0;
         z-index: 200;
         perspective: 200px
+    }
+    #agilePassBigDataContainer #agilePassBigDataContent {
+        padding: 30px 10px;
+        font-size: 10px;
+        line-height: 12px;
+    }
+    #agilePassBigDataContainer {
+        height: 190px;
+    }
+    #m-close-btn {
+        bottom: -16px;
+        font-size: 9px;
+        left: 39%;
+    }
+    .mobile #m-vision-div .techo-tile {
+        top: 15px;
+    }
+    .mobile .connector_right {
+        width: 20px;
+        background: #99c546;
+        margin: 0;
+        transform: rotate(50deg);
+        top: 21px;
+        right: 52px;
+        opacity: .7;
+    }
+    .mobile .connector_left {
+        width: 20px;
+        background: #99c546;
+        margin: 0;
+        transform: rotate(-50deg);
+        top: 21px;
+        left: 52px;
+        opacity: .7;
+    }
+    .mobile .connector {
+        width: 20px;
+        transform: rotate(0deg);
+        background: #99c546;
+        opacity: .7;
+        left: 80px;
     }
 }
