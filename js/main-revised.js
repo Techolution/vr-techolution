@@ -1,5 +1,7 @@
 if (window.innerWidth > 480) {
-    document.body.className += 'desktop';
+    document.body.className = 'desktop';
+} else {
+    document.body.className = 'mobile';
 }
 
 window.addEventListener("orientationchange", function() {
@@ -127,6 +129,17 @@ window.onresize = function() {
     if (window.innerWidth < 481) {
         if ($('body').hasClass('desktop')) {
             $('body').removeClass('desktop');
+            $('body').addClass('mobile');
+            initialAnimationMobile();
+        }
+    } else {
+        if ($('body').hasClass('mobile')) {
+            $('body').removeClass('mobile');
+            $('body').addClass('desktop');
+            $('#screen').height('');
+            $('#presentationMenu li').css({
+                'transform': 'scale(1)'
+            });
         }
     }
 };
@@ -134,7 +147,14 @@ window.onresize = function() {
 function initialAnimationMobile() {
     $('#projector').css('opacity', '1');
     $('#presentation-logo').css('transform', 'scale(1)');
+    $('.data-container > div').removeClass('active');
+    $('#presentationMenu li').each(function() {
+        $(this).find('a').removeClass('active');
+    });
     $('.vision2020').addClass('active');
+    $('#mapmenu').hide();
+    $('#presentationMenu').show();
+    $('#menuItemServices a').addClass('active');
     $('#screen').height('100%');
     $('#presentationMenu li').css({
         'opacity': '1',
