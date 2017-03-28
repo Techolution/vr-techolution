@@ -4,14 +4,6 @@ if (window.innerWidth > 480) {
     document.body.className = 'mobile';
 }
 
-window.addEventListener("orientationchange", function() {
-    if (window.matchMedia("(orientation: landscape)").matches) {
-        if (document.body.className != 'desktop') {
-            document.body.className = 'desktop';
-        }
-    }
-}, false);
-
 $('#presentationMenu #team').on('click touchstart', function() {
     $('#presentationMenu li a.active').removeClass('active');
     $(this).addClass('active');
