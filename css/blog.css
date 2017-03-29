@@ -179,7 +179,7 @@ p.blog-title {
     justify-content: center;
     align-content: center;
     flex-direction: column;
-    background: no-repeat url('/img/iot-blog-bg.jpg') left top / cover;
+    /*background: no-repeat url('/img/iot-blog-bg.jpg') left top / cover;*/
     position: relative;
 }
 
@@ -210,7 +210,7 @@ h1 {
     width: 300px;
     height: 300px;
     bottom: 0;
-    background: no-repeat url('/img/luv.jpg') center center / cover;
+    /*background: no-repeat url('/img/luv.jpg') center center / cover;*/
     box-shadow: 10px -10px 0px 1px #99c546;
 }
 
