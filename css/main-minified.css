@@ -953,8 +953,8 @@ body {
     position: absolute;
     top: 0;
     /*left: 8.6vw;*/
-    left: 125px;
-    font-size: 16px
+    font-size: 35px;
+    right: -15px;
 }
 
 .msg {
@@ -1500,7 +1500,7 @@ div#agilePassBigDataContent a {
     width: 30px;
     height: 30px;
     border-radius: 15px;
-    margin-top: -5px
+    margin-top: 1px;
 }
 
 .cloud {
@@ -1998,28 +1998,21 @@ div#agilePassBigDataContent a {
         top: 15px;
     }
     .mobile .connector_right {
-        width: 20px;
-        background: #99c546;
         margin: 0;
-        transform: rotate(50deg);
+        transform: rotate(45deg);
         top: 21px;
-        right: 52px;
-        opacity: .7;
+        right: 48px;
     }
     .mobile .connector_left {
-        width: 20px;
-        background: #99c546;
         margin: 0;
-        transform: rotate(-50deg);
+        transform: rotate(-45deg);
         top: 21px;
-        left: 52px;
-        opacity: .7;
+        left: 48px;
     }
     .mobile .connector {
-        width: 20px;
+        width: 40px;
         transform: rotate(0deg);
-        background: #99c546;
-        opacity: .7;
-        left: 80px;
+        left: 70px;
+        bottom: 72px;
     }
 }

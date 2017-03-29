@@ -6,7 +6,7 @@ body.desktop {
     bottom: auto;
     margin: 0 auto;
     padding: 0;
-    height: 1036px;
+    height: 887px;
     overflow: auto;
     max-width: 1500px;
 }
@@ -17,7 +17,7 @@ body.desktop {
     left: 0;
     top: 0px;
     z-index: 0;
-    height: 1036px;
+    height: 887px;
     width: 1500px;
     transform: none;
     object-fit: initial;
@@ -27,7 +27,7 @@ body.desktop {
     position: absolute;
     left: 0;
     top: 0;
-    height: 1036px;
+    height: 887px;
     width: 1500px;
     transform: none;
     bottom: auto;
@@ -47,10 +47,10 @@ body.desktop {
 
 .desktop div#screen {
     position: absolute;
-    top: 180px;
+    top: 27px;
     left: 225px;
     width: 1055px;
-    height: 722px;
+    height: 726px;
     z-index: 5000;
 }
 
@@ -59,15 +59,8 @@ body.desktop {
     top: 0;
     left: 0;
     width: 100%;
-    height: 40px;
+    height: 70px;
     z-index: 100;
-}
-
-.desktop #companymsg {
-    left: 145px;
-    height: auto;
-    top: 30px;
-    position: absolute;
 }
 
 .desktop #projector {
@@ -75,7 +68,7 @@ body.desktop {
 }
 
 .desktop #brandingWrapper>#logo img {
-    width: 121px;
+    width: 240px;
 }
 
 .desktop #presentationMenu li a img {
@@ -86,20 +79,20 @@ body.desktop {
     opacity: 1;
     left: 504px;
     position: absolute;
-    top: 827px;
+    top: 675px;
     width: 474px;
     height: 85px;
     transform: perspective(82px) rotateX(15deg);
 }
 
 .desktop #companymsg {
-    left: 145px;
-    height: 30px;
-    top: 7px;
+    left: 285px;
+    height: 50px;
+    top: 10px;
     position: absolute;
     transform: none;
-    font-size: 16px;
-    width: calc(100% - 190px);
+    font-size: 24px;
+    width: calc(100% - 300px);
 }
 
 .desktop div#projector {
@@ -109,7 +102,10 @@ body.desktop {
 
 .desktop #brandingWrapper #companymsg p#visionMsg {
     visibility: visible;
-    left: 28%;
+    left: auto;
+    position: absolute;
+    top: 0;
+    padding-top: 13px;
 }
 
 .desktop .div {
@@ -148,13 +144,14 @@ body.desktop {
 }
 
 .desktop #m-vision-div #webMobile {
-    left: 0;
+    left: 45px;
+    top: 45px;
 }
 
 .desktop #m-vision-div #iot {
-    right: 0;
+    right: 45px;
     left: auto;
-    top: 0;
+    top: 45px;
 }
 
 .desktop #m-vision-div #cloudTransformation {
@@ -174,41 +171,28 @@ body.desktop {
 }
 
 .desktop .connector_left {
-    margin: 0;
-    top: -42px;
-    height: 329px;
-    width: 120px;
     transform: rotate(-45deg);
-    background-color: #99c546;
-    border-radius: 59px;
-    left: 63px;
-    box-shadow: 1px 9px 19px 1px #99c546;
-    opacity: .5;
+    height: auto;
+    width: 140px;
+    left: 77px;
+    top: 76px;
+    margin: 0;
 }
 
 .desktop .connector_right {
-    box-shadow: 1px 9px 19px 1px #99c546;
-    margin: 0;
-    top: -42px;
-    height: 329px;
-    width: 120px;
     transform: rotate(45deg);
-    background-color: #99c546;
-    border-radius: 59px;
-    right: 63px;
-    opacity: .5;
+    height: auto;
+    width: 140px;
+    right: 77px;
+    top: 76px;
+    margin: 0;
 }
 
 .desktop .connector {
-    margin: 0;
-    height: 240px;
-    width: 120px;
-    background-color: #99c546;
-    border-radius: 59px;
-    left: 140px;
-    box-shadow: 1px 9px 19px 1px #99c546;
-    bottom: -10px;
-    opacity: .5;
+    height: auto;
+    width: 140px;
+    left: 130px;
+    bottom: 55px;
 }
 
 .desktop .services-container {
@@ -220,6 +204,7 @@ body.desktop {
     text-align: center;
     color: #07939f;
     width: calc(100% - 60px);
+    padding-top: 6px;
 }
 
 .desktop .rect {
@@ -287,4 +272,25 @@ body.desktop {
 .desktop #agilePassBigDataContent {
     max-width: 400px;
     margin: 0 auto;
+}
+
+.desktop .svg-icon.web-mobile {
+    padding-top: 9px;
+}
+
+.mobile .iot .svg-icon {
+    margin-top: -4px;
+}
+
+.mobile #webMobile {
+    padding-top: 8px;
+    left: 21px;
+    top: -5px;
+}
+
+.mobile #iot {
+    bottom: auto;
+    top: -95px;
+    left: 110px;
+    right: auto;
 }
