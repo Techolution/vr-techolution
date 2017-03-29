@@ -144,14 +144,14 @@ body.desktop {
 }
 
 .desktop #m-vision-div #webMobile {
-    left: 45px;
-    top: 45px;
+    left: 20px;
+    top: 75px;
 }
 
 .desktop #m-vision-div #iot {
-    right: 45px;
+    right: 20px;
     left: auto;
-    top: 45px;
+    top: 75px;
 }
 
 .desktop #m-vision-div #cloudTransformation {
@@ -171,20 +171,20 @@ body.desktop {
 }
 
 .desktop .connector_left {
-    transform: rotate(-45deg);
+    transform: rotate(-60deg);
     height: auto;
     width: 140px;
-    left: 77px;
-    top: 76px;
+    left: 65px;
+    top: 90px;
     margin: 0;
 }
 
 .desktop .connector_right {
-    transform: rotate(45deg);
+    transform: rotate(60deg);
     height: auto;
     width: 140px;
-    right: 77px;
-    top: 76px;
+    right: 65px;
+    top: 90px;
     margin: 0;
 }
 
@@ -284,13 +284,13 @@ body.desktop {
 
 .mobile #webMobile {
     padding-top: 8px;
-    left: 21px;
-    top: -5px;
+    left: 11px;
+    top: 7px;
 }
 
 .mobile #iot {
     bottom: auto;
-    top: -95px;
-    left: 110px;
+    top: -83px;
+    left: 121px;
     right: auto;
 }

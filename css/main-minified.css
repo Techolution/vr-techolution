@@ -1935,13 +1935,13 @@ div#agilePassBigDataContent a {
     .service {
         background-color: #fff;
         height: auto;
-        width: 30%;
+        width: 28%;
         margin: 5px 6px;
         border-radius: 2px;
         float: left;
         cursor: pointer;
         border-radius: 5px;
-        border: 1px solid #07939f
+        border: 1px solid #07939f;
     }
     .service:hover {
         box-shadow: -1px 3px 3px #008b8b
@@ -2005,15 +2005,15 @@ div#agilePassBigDataContent a {
     }
     .mobile .connector_right {
         margin: 0;
-        transform: rotate(45deg);
-        top: 21px;
-        right: 48px;
+        transform: rotate(60deg);
+        top: 27px;
+        right: 43px;
     }
     .mobile .connector_left {
         margin: 0;
-        transform: rotate(-45deg);
-        top: 21px;
-        left: 48px;
+        transform: rotate(-60deg);
+        top: 27px;
+        left: 43px;
     }
     .mobile .connector {
         width: 40px;
