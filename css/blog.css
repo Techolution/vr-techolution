@@ -358,4 +358,17 @@ p.copyright {
     .visible-xs {
         display: block;
     }
+    p.contact-us {
+        font-size: 15px;
+    }
+    footer a {
+        font-size: 13px;
+    }
+    ul.follow-links {
+        margin-top: 30px;
+    }
+    ul.follow-links li a {
+        height: 30px;
+        width: 30px;
+    }
 }
