@@ -259,6 +259,14 @@ footer#dataFooter {
     background: rgba(0, 0, 0, .9);
 }
 
+.hidden-xs {
+    display: none;
+}
+
+.visible-xs {
+    display: block;
+}
+
 #blogFooter {
     max-width: 1170px;
     margin: 0 auto;
@@ -339,5 +347,11 @@ p.copyright {
     }
     .blog-list li a {
         font-size: 14px;
+    }
+    .hidden-xs {
+        display: block;
+    }
+    .visible-xs {
+        display: none;
     }
 }
