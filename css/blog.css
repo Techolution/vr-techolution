@@ -260,11 +260,11 @@ footer#dataFooter {
 }
 
 .hidden-xs {
-    display: none;
+    display: block;
 }
 
 .visible-xs {
-    display: block;
+    display: none;
 }
 
 #blogFooter {
