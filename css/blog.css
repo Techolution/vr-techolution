@@ -331,6 +331,10 @@ p.copyright {
     width: 100%;
 }
 
+.content-blog-title {
+    text-align: center;
+}
+
 @media all and (max-width: 767px) {
     .logo img {
         height: auto;
@@ -349,9 +353,9 @@ p.copyright {
         font-size: 14px;
     }
     .hidden-xs {
-        display: block;
+        display: none;
     }
     .visible-xs {
-        display: none;
+        display: block;
     }
 }
