@@ -169,7 +169,7 @@ p.blog-title {
     left: 0;
     right: 0;
     top: 0;
-    box-shadow: 1px 1px 38px -4px #000;
+    box-shadow: 1px 1px 38px -4px rgba(0, 0, 0, 0.3);
 }
 
 #banner {
@@ -256,7 +256,7 @@ p.pub-date {
 }
 
 footer#dataFooter {
-    background: rgba(0, 0, 0, .9);
+    background: rgba(0, 132, 145, 0.9);
 }
 
 .hidden-xs {
