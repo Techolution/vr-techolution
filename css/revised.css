@@ -6,7 +6,7 @@ body.desktop {
     bottom: auto;
     margin: 0 auto;
     padding: 0;
-    height: 887px;
+    height: 1036px;
     overflow: auto;
     max-width: 1500px;
 }
@@ -17,7 +17,7 @@ body.desktop {
     left: 0;
     top: 0px;
     z-index: 0;
-    height: 887px;
+    height: 1036px;
     width: 1500px;
     transform: none;
     object-fit: initial;
@@ -27,7 +27,7 @@ body.desktop {
     position: absolute;
     left: 0;
     top: 0;
-    height: 887px;
+    height: 1036px;
     width: 1500px;
     transform: none;
     bottom: auto;
