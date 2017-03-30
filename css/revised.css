@@ -47,7 +47,7 @@ body.desktop {
 
 .desktop div#screen {
     position: absolute;
-    top: 27px;
+    top: 38px;
     left: 225px;
     width: 1055px;
     height: 726px;
@@ -79,7 +79,7 @@ body.desktop {
     opacity: 1;
     left: 504px;
     position: absolute;
-    top: 675px;
+    top: 690px;
     width: 474px;
     height: 85px;
     transform: perspective(82px) rotateX(15deg);
