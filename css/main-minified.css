@@ -818,7 +818,7 @@ body {
     left: 0;
     bottom: 0;
     right: 0;
-    font-family: 'Varela Round', sans-serif, Helvetica
+    /*font-family: 'Varela Round', sans-serif, Helvetica*/
 }
 
 *,
@@ -938,14 +938,14 @@ body {
     letter-spacing: -0.3px;
     position: absolute;
     z-index: 1;
-    font-family: Serif;
+    font-family: "Helvetica Neue", arial, sans-serif;
     font-weight: normal;
     left: 9.9vw;
     font-size: 12px;
     top: 50%;
     height: 16px;
     width: 23vw;
-    transform: translateY(-50%)
+    transform: translateY(-50%);
 }
 
 #logo:after {
@@ -1315,11 +1315,10 @@ body #maplocations>a:hover>span {
     border-radius: 4px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     background-color: #fff;
-    padding-left: 3px;
+    padding-left: 10px;
     padding-top: 5px;
     padding-right: 10px;
     text-align: center;
-    font-family: 'Cormorant Garamond', serif;
     padding-bottom: 14px;
     vertical-align: middle
 }
@@ -1439,7 +1438,7 @@ body #maplocations>a:hover>span {
 }
 
 body {
-    font-family: sans-serif;
+    font-family: "Helvetica Neue", arial, sans-serif;
     background: #d3dce8;
 }
 
@@ -1453,7 +1452,7 @@ body {
     box-sizing: border-box;
     text-align: center;
     color: #fff;
-    font-family: sans-serif;
+    font-family: "Helvetica Neue", arial, sans-serif;
     font-size: 5px;
     cursor: pointer;
     left: 12px;

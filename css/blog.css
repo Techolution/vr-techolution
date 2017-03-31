@@ -16,7 +16,7 @@ a:active {
 
 body {
     background: white;
-    font-family: 'Quicksand', sans-serif;
+    font-family: "Helvetica Neue", arial, sans-serif;
 }
 
 p {
@@ -150,7 +150,7 @@ p {
 .blog-list li a {
     display: block;
     color: #99c546;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 p.blog-title {
