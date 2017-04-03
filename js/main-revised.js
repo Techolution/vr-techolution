@@ -3,7 +3,6 @@ if (window.innerWidth > 480) {
 } else {
     document.body.className = 'mobile';
 }
-
 $('#presentationMenu #team').on('click touchstart', function() {
     $('#presentationMenu li a.active').removeClass('active');
     $(this).addClass('active');
@@ -72,6 +71,16 @@ $('.info-graphic-tile.iot, .info-graphic-tile.cloud').click(function() {
     $('#m-content').html(commonDataVision);
     $('#agilePassBigDataContainer').show();
 });
+$('#webMobile a').click(function(e) {
+
+    e.preventDefault();
+    var blogId = $(this).parent().attr('id');
+    if (this.href.indexOf('?q=') == -1) {
+        $(this).attr('href', $(this).attr('href') + '?q=' + blogId);
+        window.location.href = $(this).attr('href');
+    }
+
+});
 
 function showAgilePassBigDataContent(service) {
     var data = "";
@@ -95,6 +104,7 @@ function hideAgilePassBigDataContent() {
 
 window.onload = function() {
     if (window.innerWidth < 481) {
+        //$('body').scrollLeft(32);
         if ($('body').hasClass('desktop')) {
             $('body').removeClass('desktop');
         }
@@ -107,14 +117,10 @@ window.onload = function() {
             } else if ((userAgent.indexOf('opera') > -1) || (userAgent.indexOf('opr') > -1)) {
                 //browser is opera
             } else {
-
                 $('body').addClass('safari');
-
             }
         }
-
     }
-
 };
 
 window.onresize = function() {
