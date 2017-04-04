@@ -71,15 +71,13 @@ $('.info-graphic-tile.iot, .info-graphic-tile.cloud').click(function() {
     $('#m-content').html(commonDataVision);
     $('#agilePassBigDataContainer').show();
 });
-$('#webMobile a').click(function(e) {
-
+$('.tiles a').click(function(e) {
     e.preventDefault();
     var blogId = $(this).parent().attr('id');
     if (this.href.indexOf('?q=') == -1) {
         $(this).attr('href', $(this).attr('href') + '?q=' + blogId);
         window.location.href = $(this).attr('href');
     }
-
 });
 
 function showAgilePassBigDataContent(service) {
