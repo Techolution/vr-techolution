@@ -31,7 +31,6 @@ function createCORSRequest(method, url) {
         if (window.location.href.indexOf('?q=') > -1) {
             var blogSubject = window.location.href.split('?q=');
             response.map(function(object) {
-
                 if (object.field_id[0].value == blogSubject[1]) {
                     $('#ajax-title, #ajax-title-mobile').text(object.title[0].value);
                     var bodyData = '';
@@ -42,12 +41,8 @@ function createCORSRequest(method, url) {
                     } else {
                         $('#ajax-body').html(object.body[0].value);
                     }
-
-
                 }
             });
-
-
         }
     };
 
