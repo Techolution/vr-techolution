@@ -31,12 +31,12 @@ function createCORSRequest(method, url) {
         if (window.location.href.indexOf('?q=') > -1) {
             var blogSubject = window.location.href.split('?q=');
             response.map(function(object) {
-                console.log(object.field_id[0].value);
+
                 if (object.field_id[0].value == blogSubject[1]) {
                     $('#ajax-title, #ajax-title-mobile').text(object.title[0].value);
                     var bodyData = '';
                     if (object.body[0].value.indexOf('/sites/default/files/') > -1) {
-                        console.log('in');
+
                         bodyData = object.body[0].value.replace(/\/sites/gi, 'http://dev.techolution.com:5051/sites');
                         $('#ajax-body').html(bodyData);
                     } else {
