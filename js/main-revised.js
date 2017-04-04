@@ -104,7 +104,8 @@ function hideAgilePassBigDataContent() {
 
 window.onload = function() {
     if (window.innerWidth < 481) {
-        //$('body').scrollLeft(32);
+        $(window).scrollLeft(32);
+        $(window).scrollTop(30);
         if ($('body').hasClass('desktop')) {
             $('body').removeClass('desktop');
         }
