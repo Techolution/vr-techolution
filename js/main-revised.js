@@ -101,11 +101,12 @@ function hideAgilePassBigDataContent() {
     document.getElementById("m-vision-div").style.display = "block";
     document.getElementById("agilePassBigDataContainer").style.display = "none";
 }
-
 window.onload = function() {
+    setTimeout(function() {
+        scrollTo(32, 30);
+    }, 100);
     if (window.innerWidth < 481) {
-        $(window).scrollLeft(32);
-        $(window).scrollTop(30);
+
         if ($('body').hasClass('desktop')) {
             $('body').removeClass('desktop');
         }
