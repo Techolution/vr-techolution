@@ -388,6 +388,10 @@ p.copyright {
     margin: 0 0 20px 20px;
 }
 
+#iot-menu {
+    display: none;
+}
+
 img#iotbuilding,
 img#iot-river {
     width: auto;
