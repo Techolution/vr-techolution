@@ -158,11 +158,6 @@ p {
     width: 33.3333%;
 }
 
-.col-xs-12.col-md-4 {
-    float: left;
-    width: 100%;
-}
-
 .col-md-4>div {
     padding: 0 10px;
 }
@@ -182,6 +177,10 @@ h3 {
     float: right;
     width: 500px;
     margin-left: 15px;
+}
+
+.content-inner img#mobil {
+    width: auto;
 }
 
 p.blog-title {
@@ -385,6 +384,10 @@ p.copyright {
     .logo img {
         height: auto;
         width: 120px;
+    }
+    .col-xs-12.col-md-4 {
+        float: left;
+        width: 100%;
     }
     p.blog-title {
         font-size: 14px;
