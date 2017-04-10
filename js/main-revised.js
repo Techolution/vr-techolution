@@ -66,12 +66,12 @@ $('#mapmenu #back').on('click touchstart', function() {
 
 var commonDataVision = "To learn more about our expert consulting services & project development please reach out to <a href='mailto:consulting@techolution.com'>consulting@techolution.com</a>.";
 
-$('.info-graphic-tile.iot, .info-graphic-tile.cloud').click(function() {
+$('.info-graphic-tile.cloud').click(function() {
     $('#m-vision-div').hide();
     $('#m-content').html(commonDataVision);
     $('#agilePassBigDataContainer').show();
 });
-$('#webMobile a').click(function(e) {
+$('#webMobile a, #iot a').click(function(e) {
 
     e.preventDefault();
     var blogId = $(this).parent().attr('id');
