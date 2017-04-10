@@ -183,6 +183,10 @@ h3 {
     width: auto;
 }
 
+.content-inner img#smartbuilding {
+    width: auto;
+}
+
 p.blog-title {
     position: absolute;
     top: 50%;
