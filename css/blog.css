@@ -388,6 +388,15 @@ p.copyright {
     margin: 0 0 20px 20px;
 }
 
+img#iotbuilding,
+img#iot-river {
+    width: auto;
+}
+
+.contact-ravi {
+    text-align: right;
+}
+
 .content-blog-title {
     text-align: center;
 }
