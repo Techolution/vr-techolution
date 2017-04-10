@@ -160,7 +160,14 @@ h3 {
 
 .content-inner img[data-align*="left"] {
     float: left;
-    width: auto;
+    width: 300px;
+    margin-right: 15px;
+}
+
+.content-inner img[data-align*="right"] {
+    float: right;
+    width: 300px;
+    margin-left: 15px;
 }
 
 p.blog-title {
