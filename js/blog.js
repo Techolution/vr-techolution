@@ -55,7 +55,7 @@ function createCORSRequest(method, url) {
         var menuID = $(this).attr('href');
         $('html, body').animate({
             scrollTop: $(menuID).offset().top - 65
-        }, 2000);
+        }, 1000);
     });
 
 })();
