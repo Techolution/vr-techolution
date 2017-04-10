@@ -160,13 +160,13 @@ h3 {
 
 .content-inner img[data-align*="left"] {
     float: left;
-    width: 300px;
+    width: 500px;
     margin-right: 15px;
 }
 
 .content-inner img[data-align*="right"] {
     float: right;
-    width: 300px;
+    width: 500px;
     margin-left: 15px;
 }
 
