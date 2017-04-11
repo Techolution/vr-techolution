@@ -158,7 +158,13 @@ p {
 }
 
 #iot-blog {
-    padding-top: 30px;
+    padding-top: 50px;
+}
+
+#iot-practice-box {
+    background: rgba(0, 146, 159, .9);
+    padding: 10px 24px;
+    margin-bottom: 30px;
 }
 
 h2,
@@ -412,8 +418,10 @@ p.copyright {
     flex: 1;
     text-align: center;
     margin: 0;
-    padding: 5px 0;
+    padding: 15px 0;
     color: white;
+    border-right: 1px solid;
+    font-size: 17px;
 }
 
 
@@ -427,11 +435,40 @@ img#iot-river {
 }
 
 .contact-ravi {
-    text-align: right;
+    text-align: center;
+    background-color: #99c546;
+    padding: 10px 0;
+}
+
+.contact-ravi p:last-child {
+    font-size: 18px;
+    line-height: 27px;
+    color: #fff;
+}
+
+.contact-ravi a {
+    color: white;
 }
 
 .content-blog-title {
     text-align: center;
+}
+
+@media all and (max-width: 1100px) {
+    p.blog-title {
+        font-size: 18px;
+    }
+    div#data-container {
+        padding: 0 15px;
+    }
+}
+
+@media all and (max-width: 900px) {
+    #iot-blog img {
+        max-width: 100%;
+        height: auto;
+        width: auto;
+    }
 }
 
 @media all and (max-width: 767px) {
@@ -439,12 +476,17 @@ img#iot-river {
         height: auto;
         width: 120px;
     }
-    .col-xs-12.col-md-4 {
-        float: left;
-        width: 100%;
+    #iot-blog img {
+        height: auto;
+        width: auto;
+        max-width: 100%;
     }
     p.blog-title {
         font-size: 14px;
+    }
+    .three-box-container>div {
+        border-right: none;
+        border-bottom: 10px solid #fff;
     }
     .burger-menu {
         padding: 10px 0 10px;
@@ -473,5 +515,31 @@ img#iot-river {
     ul.follow-links li a {
         height: 30px;
         width: 30px;
+    }
+    .clearfix.three-box-container {
+        flex-direction: column;
+    }
+    #iot-menu {
+        top: 51px;
+    }
+    #iot-menu ul {
+        display: block;
+    }
+    #iot-menu ul li {
+        display: inline-block;
+        width: 33.333%;
+        min-height: 37px;
+        font-size: 11px;
+        line-height: 13px;
+        border-bottom: 1px solid #fff;
+        border-right: 1px solid #fff;
+        padding: 5px 5px 0 5px;
+        vertical-align: middle;
+        flex: none;
+        float: left;
+    }
+    #iot-menu ul li:nth-last-child(2),
+    #iot-menu ul li:nth-last-child(1) {
+        width: 50%;
     }
 }
