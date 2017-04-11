@@ -17,6 +17,7 @@ function createCORSRequest(method, url) {
 
 // Make the actual CORS request.
 (function() {
+
     // This is a sample server that supports CORS.
     var url = 'http://dev.techolution.com:5051/api/techo_blogs_v1-0';
 
@@ -51,11 +52,4 @@ function createCORSRequest(method, url) {
     };
 
     xhr.send();
-    $("#iot-menu li a").click(function() {
-        var menuID = $(this).attr('href');
-        $('html, body').animate({
-            scrollTop: $(menuID).offset().top - 65
-        }, 1000);
-    });
-
 })();
