@@ -454,6 +454,30 @@ img#iot-river {
     text-align: center;
 }
 
+#iot-practice-box table {
+    width: 100%;
+    text-align: center;
+}
+
+#iot-practice-box table tr.header td {
+    background: #99c546;
+    padding: 15px 5px;
+    font-weight: bold;
+}
+
+.contact-ravi img {
+    width: auto;
+    margin: 0 auto;
+    border-radius: 7px;
+    box-shadow: 3px 3px 11px -3px black;
+}
+
+#iot-practice-box table td {
+    padding: 12px 5px;
+    background: #fff;
+    border: 1px solid transparent;
+}
+
 @media all and (max-width: 1100px) {
     p.blog-title {
         font-size: 18px;
