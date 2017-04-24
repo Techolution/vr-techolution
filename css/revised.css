@@ -294,3 +294,7 @@ body.desktop {
     left: 121px;
     right: auto;
 }
+
+.glocation strong {
+    line-height: 27px;
+}

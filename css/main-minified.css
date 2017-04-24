@@ -65,15 +65,15 @@
 }
 
 .location-info-container {
-    float: left;
     width: 100%;
-    position: relative
+    position: relative;
+    display: table;
 }
 
 .location-left-box {
-    float: left;
     position: relative;
-    width: 75%
+    width: 75%;
+    display: table-cell;
 }
 
 .loc-img {
@@ -109,9 +109,10 @@
 }
 
 .location-right-box {
-    float: left;
     width: 25%;
-    position: relative
+    position: relative;
+    display: table-cell;
+    vertical-align: bottom;
 }
 
 .follow-box {
@@ -206,7 +207,9 @@ div#singapore {
     }
     .location-left-box {
         width: 100%;
-        margin-bottom: 15px
+        margin-bottom: 15px;
+        display: block;
+        float: left;
     }
     .loc-img {
         width: 100%;
@@ -224,7 +227,9 @@ div#singapore {
         margin-bottom: 10px
     }
     .location-right-box {
-        width: 100%
+        width: 100%;
+        display: block;
+        float: left;
     }
     .follow-box {
         margin-top: 0;
